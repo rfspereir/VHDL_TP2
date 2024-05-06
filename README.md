@@ -9,7 +9,7 @@
 - Rafael Felipe Silva Pereira | [rfspereir](https://github.com/rfspereir)
 
 ## Introdução:
-Projeto em desenvolvimento como tTrabalho apresentado como parte da avaliação da disciplina de Sistemas Reconfiguráveis, sobre orientação do professor Antonio Hamilton Magalhães
+Projeto em desenvolvimento como Trabalho apresentado como parte da avaliação da disciplina de Sistemas Reconfiguráveis do Curso de Engenharia de Computação da PUC-Minas, sobre orientação do professor Antonio Hamilton Magalhães.
 
 Este projeto utiliza a plataforma Quartus II e linguagem VHDL para desenvolver três entidades distintas:
 
