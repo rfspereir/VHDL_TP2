@@ -24,15 +24,15 @@ ENTITY reg_bank IS
 		regn_do_b		: OUT STD_LOGIC_VECTOR(7 DOWNTO 0); --Saída B de dados de um dos registradores. Independente de sinal de habilitação e do sinal do clock
 		c_flag_out		: OUT STD_LOGIC;					--Saida do Registrador R7(0)(C). Independente de sinal de habilitação e do sinal do clock
 		z_flag_out		: OUT STD_LOGIC;					--Saida do Registrador R7(1)(Z). Independente de sinal de habilitação e do sinal do clock
-		v_flag_out		: OUT STD_LOGIC;					--Saida do Registrador R7(2)(V). Independente de sinal de habilitação e do sinal do clock
-		);
+		v_flag_out		: OUT STD_LOGIC						--Saida do Registrador R7(2)(V). Independente de sinal de habilitação e do sinal do clock
+	);
 END ENTITY;
 
 --DEFINICAO DA ARQUITETURA
 
 ARCHITECTURE arch1 OF reg_bank IS
 	TYPE mem_type IS ARRAY(0 TO 7) OF STD_LOGIC_VECTOR(7 DOWNTO 0); --Define o tipo de dados para o banco de registradores (8 registradores de 8 bits cada)
-	SIGNAL mem_reg 		: mem_type 									--Declara o banco de registradores utilizando o tipo definida acima.
+	SIGNAL mem_reg 		: mem_type; 								--Declara o banco de registradores utilizando o tipo definida acima.
 	SIGNAL addr_int 	: INTEGER RANGE 0 TO 2; 					--Declara a variável de endereçamento do registrador que receberá o dado da entrada.
 	SIGNAL addr_int_a 	: INTEGER RANGE 0 TO 2; 					--Declara a variável de endereçamento do registrador que será lido pela saida A.
 	SIGNAL addr_int_b 	: INTEGER RANGE 0 TO 2; 					--Declara a variável de endereçamento do registrador que será lido pela saida B.
@@ -41,16 +41,16 @@ BEGIN
 
 --CONVERSÃO DE TIPOS
 	
-	addr_int   <= 	TO_INTEGER(UNSIGNED(regn_wr_sel); 				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser escrito.
-	addr_int_a <= 	TO_INTEGER(UNSIGNED(regn_wr_sel_a);				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser lido pela saida A.
-	addr_int_b <= 	TO_INTEGER(UNSIGNED(regn_wr_sel_b);				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser lido pela saida B.
+	addr_int   <= 	TO_INTEGER(UNSIGNED(regn_wr_sel)); 				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser escrito.
+	addr_int_a <= 	TO_INTEGER(UNSIGNED(regn_rd_sel_a));				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser lido pela saida A.
+	addr_int_b <= 	TO_INTEGER(UNSIGNED(regn_rd_sel_b));				--Converte de STD_LOGIC para INTEGER a entrada de endereço de registrador a ser lido pela saida B.
 
 --PROCESSO PARA ESCRITA NOS REGISTRADORES
 	PROCESS(nrst, clk_in, regn_wr_ena)
 		BEGIN
 		IF nrst ='0' THEN
 			mem_reg <= (OTHERS => (OTHERS => '0'));					--Caso o Reset esteja em nível lógico baixo, o valor é zerado.
-		ELSIF RISING EDGE(clk_in)) THEN								--Verifica se o clock está na borda de subida.
+		ELSIF RISING_EDGE(clk_in) THEN								--Verifica se o clock está na borda de subida.
 				IF regn_wr_ena = '1' THEN							--Verifica se a escrita nos registradores está habilitada
 					mem_reg(addr_int) <= regn_di;					--Escreve o dado (regn_di) no registrador R(addr_int)
 				END IF;
