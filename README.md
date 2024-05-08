@@ -4,7 +4,7 @@
 - [Introdução](https://github.com/rfspereir/VHDL_TP2#introdu%C3%A7%C3%A3o)
 
 ## Desenvolvedores:
-- Alexandre Magno
+- Alexandre Magno Araújo | [alexandmag](https://github.com/alexandmag)
 - Milleny Teixeira de Souza  | [millenyteixeira](https://github.com/millenyteixeira)
 - Rafael Felipe Silva Pereira | [rfspereir](https://github.com/rfspereir)
 
