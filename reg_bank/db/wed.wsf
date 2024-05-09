@@ -27,7 +27,7 @@ VECTOR("D:/git/VHDL_TP2/reg_bank/reg_bank.vwf")
 		ZEND = 1000000;
 		NUMERATOR = 20;
 		DENOMINATOR = 1000;
-		TOP_INDEX = 0;
+		TOP_INDEX = 14;
 	}
 	CLOCK{
 		PERIOD = 5000;
