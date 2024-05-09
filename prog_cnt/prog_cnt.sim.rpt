@@ -1,0 +1,277 @@
+Simulator report for prog_cnt
+Wed May 08 22:38:31 2024
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 66 nodes     ;
+; Simulation Coverage         ;      39.39 % ;
+; Total Number of Transitions ; 3314         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      39.39 % ;
+; Total nodes checked                                 ; 66           ;
+; Total output ports checked                          ; 66           ;
+; Total output ports with complete 1/0-value coverage ; 26           ;
+; Total output ports with no 1/0-value coverage       ; 40           ;
+; Total output ports with no 1-value coverage         ; 40           ;
+; Total output ports with no 0-value coverage         ; 40           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------+
+; Complete 1/0-Value Coverage                            ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |prog_cnt|cnt~1  ; |prog_cnt|cnt~1  ; out              ;
+; |prog_cnt|cnt~2  ; |prog_cnt|cnt~2  ; out              ;
+; |prog_cnt|cnt~4  ; |prog_cnt|cnt~4  ; out              ;
+; |prog_cnt|cnt~6  ; |prog_cnt|cnt~6  ; out              ;
+; |prog_cnt|cnt~7  ; |prog_cnt|cnt~7  ; out              ;
+; |prog_cnt|cnt~8  ; |prog_cnt|cnt~8  ; out              ;
+; |prog_cnt|cnt~9  ; |prog_cnt|cnt~9  ; out              ;
+; |prog_cnt|cnt~10 ; |prog_cnt|cnt~10 ; out              ;
+; |prog_cnt|cnt[3] ; |prog_cnt|cnt[3] ; regout           ;
+; |prog_cnt|cnt[2] ; |prog_cnt|cnt[2] ; regout           ;
+; |prog_cnt|cnt[1] ; |prog_cnt|cnt[1] ; regout           ;
+; |prog_cnt|cnt[0] ; |prog_cnt|cnt[0] ; regout           ;
+; |prog_cnt|clk    ; |prog_cnt|clk    ; out              ;
+; |prog_cnt|nrst   ; |prog_cnt|nrst   ; out              ;
+; |prog_cnt|load   ; |prog_cnt|load   ; out              ;
+; |prog_cnt|q[0]   ; |prog_cnt|q[0]   ; pin_out          ;
+; |prog_cnt|q[1]   ; |prog_cnt|q[1]   ; pin_out          ;
+; |prog_cnt|q[2]   ; |prog_cnt|q[2]   ; pin_out          ;
+; |prog_cnt|q[3]   ; |prog_cnt|q[3]   ; pin_out          ;
+; |prog_cnt|Add0~0 ; |prog_cnt|Add0~0 ; out0             ;
+; |prog_cnt|Add0~1 ; |prog_cnt|Add0~1 ; out0             ;
+; |prog_cnt|Add0~2 ; |prog_cnt|Add0~2 ; out0             ;
+; |prog_cnt|Add0~3 ; |prog_cnt|Add0~3 ; out0             ;
+; |prog_cnt|Add0~4 ; |prog_cnt|Add0~4 ; out0             ;
+; |prog_cnt|Add0~5 ; |prog_cnt|Add0~5 ; out0             ;
+; |prog_cnt|Add0~6 ; |prog_cnt|Add0~6 ; out0             ;
++------------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------+
+; Missing 1-Value Coverage                                         ;
++-----------------------+-----------------------+------------------+
+; Node Name             ; Output Port Name      ; Output Port Type ;
++-----------------------+-----------------------+------------------+
+; |prog_cnt|cnt~0       ; |prog_cnt|cnt~0       ; out              ;
+; |prog_cnt|cnt~3       ; |prog_cnt|cnt~3       ; out              ;
+; |prog_cnt|cnt~5       ; |prog_cnt|cnt~5       ; out              ;
+; |prog_cnt|cnt[10]     ; |prog_cnt|cnt[10]     ; regout           ;
+; |prog_cnt|cnt[9]      ; |prog_cnt|cnt[9]      ; regout           ;
+; |prog_cnt|cnt[8]      ; |prog_cnt|cnt[8]      ; regout           ;
+; |prog_cnt|cnt[7]      ; |prog_cnt|cnt[7]      ; regout           ;
+; |prog_cnt|cnt[6]      ; |prog_cnt|cnt[6]      ; regout           ;
+; |prog_cnt|cnt[5]      ; |prog_cnt|cnt[5]      ; regout           ;
+; |prog_cnt|cnt[4]      ; |prog_cnt|cnt[4]      ; regout           ;
+; |prog_cnt|data_in[0]  ; |prog_cnt|data_in[0]  ; out              ;
+; |prog_cnt|data_in[1]  ; |prog_cnt|data_in[1]  ; out              ;
+; |prog_cnt|data_in[2]  ; |prog_cnt|data_in[2]  ; out              ;
+; |prog_cnt|data_in[3]  ; |prog_cnt|data_in[3]  ; out              ;
+; |prog_cnt|data_in[4]  ; |prog_cnt|data_in[4]  ; out              ;
+; |prog_cnt|data_in[5]  ; |prog_cnt|data_in[5]  ; out              ;
+; |prog_cnt|data_in[6]  ; |prog_cnt|data_in[6]  ; out              ;
+; |prog_cnt|data_in[7]  ; |prog_cnt|data_in[7]  ; out              ;
+; |prog_cnt|data_in[8]  ; |prog_cnt|data_in[8]  ; out              ;
+; |prog_cnt|data_in[9]  ; |prog_cnt|data_in[9]  ; out              ;
+; |prog_cnt|data_in[10] ; |prog_cnt|data_in[10] ; out              ;
+; |prog_cnt|q[4]        ; |prog_cnt|q[4]        ; pin_out          ;
+; |prog_cnt|q[5]        ; |prog_cnt|q[5]        ; pin_out          ;
+; |prog_cnt|q[6]        ; |prog_cnt|q[6]        ; pin_out          ;
+; |prog_cnt|q[7]        ; |prog_cnt|q[7]        ; pin_out          ;
+; |prog_cnt|q[8]        ; |prog_cnt|q[8]        ; pin_out          ;
+; |prog_cnt|q[9]        ; |prog_cnt|q[9]        ; pin_out          ;
+; |prog_cnt|q[10]       ; |prog_cnt|q[10]       ; pin_out          ;
+; |prog_cnt|Add0~7      ; |prog_cnt|Add0~7      ; out0             ;
+; |prog_cnt|Add0~8      ; |prog_cnt|Add0~8      ; out0             ;
+; |prog_cnt|Add0~9      ; |prog_cnt|Add0~9      ; out0             ;
+; |prog_cnt|Add0~10     ; |prog_cnt|Add0~10     ; out0             ;
+; |prog_cnt|Add0~11     ; |prog_cnt|Add0~11     ; out0             ;
+; |prog_cnt|Add0~12     ; |prog_cnt|Add0~12     ; out0             ;
+; |prog_cnt|Add0~13     ; |prog_cnt|Add0~13     ; out0             ;
+; |prog_cnt|Add0~14     ; |prog_cnt|Add0~14     ; out0             ;
+; |prog_cnt|Add0~15     ; |prog_cnt|Add0~15     ; out0             ;
+; |prog_cnt|Add0~16     ; |prog_cnt|Add0~16     ; out0             ;
+; |prog_cnt|Add0~17     ; |prog_cnt|Add0~17     ; out0             ;
+; |prog_cnt|Add0~18     ; |prog_cnt|Add0~18     ; out0             ;
++-----------------------+-----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------+
+; Missing 0-Value Coverage                                         ;
++-----------------------+-----------------------+------------------+
+; Node Name             ; Output Port Name      ; Output Port Type ;
++-----------------------+-----------------------+------------------+
+; |prog_cnt|cnt~0       ; |prog_cnt|cnt~0       ; out              ;
+; |prog_cnt|cnt~3       ; |prog_cnt|cnt~3       ; out              ;
+; |prog_cnt|cnt~5       ; |prog_cnt|cnt~5       ; out              ;
+; |prog_cnt|cnt[10]     ; |prog_cnt|cnt[10]     ; regout           ;
+; |prog_cnt|cnt[9]      ; |prog_cnt|cnt[9]      ; regout           ;
+; |prog_cnt|cnt[8]      ; |prog_cnt|cnt[8]      ; regout           ;
+; |prog_cnt|cnt[7]      ; |prog_cnt|cnt[7]      ; regout           ;
+; |prog_cnt|cnt[6]      ; |prog_cnt|cnt[6]      ; regout           ;
+; |prog_cnt|cnt[5]      ; |prog_cnt|cnt[5]      ; regout           ;
+; |prog_cnt|cnt[4]      ; |prog_cnt|cnt[4]      ; regout           ;
+; |prog_cnt|data_in[0]  ; |prog_cnt|data_in[0]  ; out              ;
+; |prog_cnt|data_in[1]  ; |prog_cnt|data_in[1]  ; out              ;
+; |prog_cnt|data_in[2]  ; |prog_cnt|data_in[2]  ; out              ;
+; |prog_cnt|data_in[3]  ; |prog_cnt|data_in[3]  ; out              ;
+; |prog_cnt|data_in[4]  ; |prog_cnt|data_in[4]  ; out              ;
+; |prog_cnt|data_in[5]  ; |prog_cnt|data_in[5]  ; out              ;
+; |prog_cnt|data_in[6]  ; |prog_cnt|data_in[6]  ; out              ;
+; |prog_cnt|data_in[7]  ; |prog_cnt|data_in[7]  ; out              ;
+; |prog_cnt|data_in[8]  ; |prog_cnt|data_in[8]  ; out              ;
+; |prog_cnt|data_in[9]  ; |prog_cnt|data_in[9]  ; out              ;
+; |prog_cnt|data_in[10] ; |prog_cnt|data_in[10] ; out              ;
+; |prog_cnt|q[4]        ; |prog_cnt|q[4]        ; pin_out          ;
+; |prog_cnt|q[5]        ; |prog_cnt|q[5]        ; pin_out          ;
+; |prog_cnt|q[6]        ; |prog_cnt|q[6]        ; pin_out          ;
+; |prog_cnt|q[7]        ; |prog_cnt|q[7]        ; pin_out          ;
+; |prog_cnt|q[8]        ; |prog_cnt|q[8]        ; pin_out          ;
+; |prog_cnt|q[9]        ; |prog_cnt|q[9]        ; pin_out          ;
+; |prog_cnt|q[10]       ; |prog_cnt|q[10]       ; pin_out          ;
+; |prog_cnt|Add0~7      ; |prog_cnt|Add0~7      ; out0             ;
+; |prog_cnt|Add0~8      ; |prog_cnt|Add0~8      ; out0             ;
+; |prog_cnt|Add0~9      ; |prog_cnt|Add0~9      ; out0             ;
+; |prog_cnt|Add0~10     ; |prog_cnt|Add0~10     ; out0             ;
+; |prog_cnt|Add0~11     ; |prog_cnt|Add0~11     ; out0             ;
+; |prog_cnt|Add0~12     ; |prog_cnt|Add0~12     ; out0             ;
+; |prog_cnt|Add0~13     ; |prog_cnt|Add0~13     ; out0             ;
+; |prog_cnt|Add0~14     ; |prog_cnt|Add0~14     ; out0             ;
+; |prog_cnt|Add0~15     ; |prog_cnt|Add0~15     ; out0             ;
+; |prog_cnt|Add0~16     ; |prog_cnt|Add0~16     ; out0             ;
+; |prog_cnt|Add0~17     ; |prog_cnt|Add0~17     ; out0             ;
+; |prog_cnt|Add0~18     ; |prog_cnt|Add0~18     ; out0             ;
++-----------------------+-----------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed May 08 22:38:31 2024
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off prog_cnt -c prog_cnt
+Info: Using vector source file "D:/git/VHDL_TP2/prog_cnt/prog_cnt.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of prog_cnt.vwf called prog_cnt.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[9]"
+Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[8]"
+Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[6]"
+Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[4]"
+Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[1]"
+Warning: Found clock-sensitive change during active clock edge at time 115.0 ns on register "|prog_cnt|cnt[0]"
+Warning: Found clock-sensitive change during active clock edge at time 135.0 ns on register "|prog_cnt|cnt[2]"
+Warning: Found clock-sensitive change during active clock edge at time 175.0 ns on register "|prog_cnt|cnt[3]"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      39.39 %
+Info: Number of transitions in simulation is 3314
+Info: Vector file prog_cnt.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 145 megabytes
+    Info: Processing ended: Wed May 08 22:38:31 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
