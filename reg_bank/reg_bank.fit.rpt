@@ -1,5 +1,5 @@
 Fitter report for reg_bank
-Tue May 07 21:25:57 2024
+Fri May 10 20:11:11 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -61,17 +61,17 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +------------------------------------+----------------------------------------------+
-; Fitter Status                      ; Successful - Tue May 07 21:25:57 2024        ;
+; Fitter Status                      ; Successful - Fri May 10 20:11:11 2024        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; reg_bank                                     ;
 ; Top-level Entity Name              ; reg_bank                                     ;
 ; Family                             ; Cyclone II                                   ;
 ; Device                             ; EP2C35F672C6                                 ;
 ; Timing Models                      ; Final                                        ;
-; Total logic elements               ; 38 / 33,216 ( < 1 % )                        ;
-;     Total combinational functions  ; 38 / 33,216 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 27 / 33,216 ( < 1 % )                        ;
-; Total registers                    ; 27                                           ;
+; Total logic elements               ; 94 / 33,216 ( < 1 % )                        ;
+;     Total combinational functions  ; 94 / 33,216 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 64 / 33,216 ( < 1 % )                        ;
+; Total registers                    ; 64                                           ;
 ; Total pins                         ; 45 / 475 ( 9 % )                             ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
@@ -150,8 +150,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                    ; Value              ;
 +-------------------------+--------------------+
 ; Placement               ;                    ;
-;     -- Requested        ; 0 / 116 ( 0.00 % ) ;
-;     -- Achieved         ; 0 / 116 ( 0.00 % ) ;
+;     -- Requested        ; 0 / 209 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 209 ( 0.00 % ) ;
 ;                         ;                    ;
 ; Routing (by Connection) ;                    ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
@@ -173,7 +173,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 116     ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 209     ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -188,26 +188,26 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 38 / 33,216 ( < 1 % ) ;
-;     -- Combinational with no register       ; 11                    ;
+; Total logic elements                        ; 94 / 33,216 ( < 1 % ) ;
+;     -- Combinational with no register       ; 30                    ;
 ;     -- Register only                        ; 0                     ;
-;     -- Combinational with a register        ; 27                    ;
+;     -- Combinational with a register        ; 64                    ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 32                    ;
-;     -- 3 input functions                    ; 6                     ;
+;     -- 4 input functions                    ; 78                    ;
+;     -- 3 input functions                    ; 16                    ;
 ;     -- <=2 input functions                  ; 0                     ;
 ;     -- Register only                        ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 38                    ;
+;     -- normal mode                          ; 94                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
-; Total registers*                            ; 27 / 34,593 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 27 / 33,216 ( < 1 % ) ;
+; Total registers*                            ; 64 / 34,593 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 64 / 33,216 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,377 ( 0 % )     ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 6 / 2,076 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 8 / 2,076 ( < 1 % )   ;
 ; User inserted logic elements                ; 0                     ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 45 / 475 ( 9 % )      ;
@@ -223,13 +223,13 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
+; Peak interconnect usage (total/H/V)         ; 2% / 2% / 3%          ;
 ; Maximum fan-out node                        ; clk_in~clkctrl        ;
-; Maximum fan-out                             ; 27                    ;
-; Highest non-global fan-out signal           ; regn_rd_sel_a[1]      ;
-; Highest non-global fan-out                  ; 16                    ;
-; Total fan-out                               ; 272                   ;
-; Average fan-out                             ; 2.37                  ;
+; Maximum fan-out                             ; 64                    ;
+; Highest non-global fan-out signal           ; regn_rd_sel_a[2]      ;
+; Highest non-global fan-out                  ; 24                    ;
+; Total fan-out                               ; 634                   ;
+; Average fan-out                             ; 3.05                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -240,32 +240,32 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name             ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; c_flag_in        ; C9    ; 3        ; 16           ; 36           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; c_flag_wr_ena    ; D9    ; 3        ; 16           ; 36           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; c_flag_in        ; H15   ; 4        ; 42           ; 36           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; c_flag_wr_ena    ; A20   ; 4        ; 55           ; 36           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; clk_in           ; P2    ; 1        ; 0            ; 18           ; 2           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; nrst             ; P1    ; 1        ; 0            ; 18           ; 3           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[0]       ; D15   ; 4        ; 40           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[1]       ; G16   ; 4        ; 44           ; 36           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[2]       ; F16   ; 4        ; 44           ; 36           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[3]       ; J17   ; 4        ; 48           ; 36           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[4]       ; B15   ; 4        ; 37           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[5]       ; H17   ; 4        ; 48           ; 36           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[6]       ; D17   ; 4        ; 46           ; 36           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_di[7]       ; B17   ; 4        ; 42           ; 36           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_a[0] ; D16   ; 4        ; 40           ; 36           ; 0           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_a[1] ; F15   ; 4        ; 44           ; 36           ; 2           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_a[2] ; D13   ; 3        ; 31           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_b[0] ; C17   ; 4        ; 46           ; 36           ; 1           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_b[1] ; A17   ; 4        ; 42           ; 36           ; 1           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_rd_sel_b[2] ; AF21  ; 7        ; 55           ; 0            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_wr_ena      ; D23   ; 5        ; 65           ; 34           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_wr_sel[0]   ; A18   ; 4        ; 46           ; 36           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_wr_sel[1]   ; H16   ; 4        ; 42           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; regn_wr_sel[2]   ; C13   ; 3        ; 31           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; v_flag_in        ; F20   ; 5        ; 65           ; 34           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; v_flag_wr_ena    ; F18   ; 4        ; 50           ; 36           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; z_flag_in        ; C24   ; 5        ; 65           ; 32           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; z_flag_wr_ena    ; B25   ; 5        ; 65           ; 32           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[0]       ; H17   ; 4        ; 48           ; 36           ; 1           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[1]       ; F17   ; 4        ; 48           ; 36           ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[2]       ; G17   ; 4        ; 48           ; 36           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[3]       ; D18   ; 4        ; 50           ; 36           ; 1           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[4]       ; A18   ; 4        ; 46           ; 36           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[5]       ; G18   ; 4        ; 50           ; 36           ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[6]       ; E18   ; 4        ; 50           ; 36           ; 0           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_di[7]       ; F18   ; 4        ; 50           ; 36           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_a[0] ; B20   ; 4        ; 55           ; 36           ; 1           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_a[1] ; D13   ; 3        ; 31           ; 36           ; 3           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_a[2] ; C13   ; 3        ; 31           ; 36           ; 2           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_b[0] ; J20   ; 5        ; 65           ; 30           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_b[1] ; B19   ; 4        ; 53           ; 36           ; 2           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_rd_sel_b[2] ; B18   ; 4        ; 46           ; 36           ; 2           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_wr_ena      ; J21   ; 5        ; 65           ; 30           ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_wr_sel[0]   ; A19   ; 4        ; 53           ; 36           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_wr_sel[1]   ; E20   ; 4        ; 55           ; 36           ; 0           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; regn_wr_sel[2]   ; C15   ; 4        ; 37           ; 36           ; 3           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; v_flag_in        ; F15   ; 4        ; 44           ; 36           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; v_flag_wr_ena    ; G15   ; 4        ; 44           ; 36           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; z_flag_in        ; F24   ; 5        ; 65           ; 30           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; z_flag_wr_ena    ; C19   ; 4        ; 53           ; 36           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -274,25 +274,25 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 +--------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; c_flag_out   ; E5    ; 2        ; 0            ; 34           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[0] ; AD16  ; 7        ; 42           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[1] ; F17   ; 4        ; 48           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[2] ; B16   ; 4        ; 37           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[3] ; H15   ; 4        ; 42           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[4] ; B14   ; 4        ; 33           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[5] ; G15   ; 4        ; 44           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[6] ; C15   ; 4        ; 37           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_a[7] ; B18   ; 4        ; 46           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[0] ; G13   ; 4        ; 35           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[1] ; F14   ; 4        ; 35           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[2] ; G14   ; 4        ; 35           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[3] ; F13   ; 4        ; 35           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[4] ; B12   ; 3        ; 29           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[5] ; A14   ; 4        ; 33           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[6] ; E15   ; 4        ; 40           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; regn_do_b[7] ; C16   ; 4        ; 37           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; v_flag_out   ; G17   ; 4        ; 48           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; z_flag_out   ; C25   ; 5        ; 65           ; 32           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; c_flag_out   ; J17   ; 4        ; 48           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[0] ; F23   ; 5        ; 65           ; 30           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[1] ; D16   ; 4        ; 40           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[2] ; D15   ; 4        ; 40           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[3] ; B17   ; 4        ; 42           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[4] ; G16   ; 4        ; 44           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[5] ; H16   ; 4        ; 42           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[6] ; A17   ; 4        ; 42           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_a[7] ; D19   ; 4        ; 53           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[0] ; F16   ; 4        ; 44           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[1] ; B15   ; 4        ; 37           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[2] ; AE19  ; 7        ; 48           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[3] ; E15   ; 4        ; 40           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[4] ; C17   ; 4        ; 46           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[5] ; B16   ; 4        ; 37           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[6] ; G24   ; 5        ; 65           ; 28           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; regn_do_b[7] ; G23   ; 5        ; 65           ; 28           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; v_flag_out   ; D17   ; 4        ; 46           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; z_flag_out   ; C16   ; 4        ; 37           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -302,12 +302,12 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
 ; 1        ; 2 / 64 ( 3 % )   ; 3.3V          ; --           ;
-; 2        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
-; 3        ; 5 / 56 ( 9 % )   ; 3.3V          ; --           ;
-; 4        ; 30 / 58 ( 52 % ) ; 3.3V          ; --           ;
-; 5        ; 5 / 65 ( 8 % )   ; 3.3V          ; --           ;
+; 2        ; 2 / 59 ( 3 % )   ; 3.3V          ; --           ;
+; 3        ; 2 / 56 ( 4 % )   ; 3.3V          ; --           ;
+; 4        ; 34 / 58 ( 59 % ) ; 3.3V          ; --           ;
+; 5        ; 6 / 65 ( 9 % )   ; 3.3V          ; --           ;
 ; 6        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
-; 7        ; 2 / 58 ( 3 % )   ; 3.3V          ; --           ;
+; 7        ; 1 / 58 ( 2 % )   ; 3.3V          ; --           ;
 ; 8        ; 0 / 56 ( 0 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -329,13 +329,13 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A13      ; 430        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A14      ; 427        ; 4        ; regn_do_b[5]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A14      ; 427        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; A17      ; 412        ; 4        ; regn_rd_sel_b[1]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A18      ; 406        ; 4        ; regn_wr_sel[0]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A19      ; 394        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A20      ; 390        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A17      ; 412        ; 4        ; regn_do_a[6]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A18      ; 406        ; 4        ; regn_di[4]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A19      ; 394        ; 4        ; regn_wr_sel[0]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A20      ; 390        ; 4        ; c_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A21      ; 382        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A22      ; 379        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A23      ; 378        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -434,7 +434,7 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; AD13     ; 186        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AD14     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD15     ; 190        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD16     ; 201        ; 7        ; regn_do_a[0]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD16     ; 201        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD17     ; 208        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD18     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD19     ; 221        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -463,7 +463,7 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; AE16     ; 200        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE17     ; 206        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE18     ; 212        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE19     ; 214        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE19     ; 214        ; 7        ; regn_do_b[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE20     ; 224        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE21     ; 228        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE22     ; 236        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -490,7 +490,7 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; AF18     ; 211        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF19     ; 213        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF20     ; 223        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF21     ; 227        ; 7        ; regn_rd_sel_b[2]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF21     ; 227        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF22     ; 235        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF23     ; 243        ; 7        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF24     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -506,20 +506,20 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; B9       ; 452        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B10      ; 448        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B11      ; 435        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B12      ; 433        ; 3        ; regn_do_b[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 433        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B14      ; 428        ; 4        ; regn_do_a[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B15      ; 420        ; 4        ; regn_di[4]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B16      ; 419        ; 4        ; regn_do_a[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B17      ; 411        ; 4        ; regn_di[7]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B18      ; 405        ; 4        ; regn_do_a[7]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B19      ; 393        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B20      ; 389        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B14      ; 428        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B15      ; 420        ; 4        ; regn_do_b[1]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B16      ; 419        ; 4        ; regn_do_b[5]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B17      ; 411        ; 4        ; regn_do_a[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B18      ; 405        ; 4        ; regn_rd_sel_b[2]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B19      ; 393        ; 4        ; regn_rd_sel_b[1]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B20      ; 389        ; 4        ; regn_rd_sel_a[0]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B21      ; 381        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B22      ; 380        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B23      ; 377        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B24      ; 363        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; B25      ; 362        ; 5        ; z_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; B25      ; 362        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; B26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C1       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; C2       ; 6          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -529,23 +529,23 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; C6       ; 485        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C7       ; 468        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C8       ; 463        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C9       ; 459        ; 3        ; c_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C9       ; 459        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C10      ; 450        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C11      ; 436        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C12      ; 434        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C13      ; 431        ; 3        ; regn_wr_sel[2]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C13      ; 431        ; 3        ; regn_rd_sel_a[2]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C15      ; 421        ; 4        ; regn_do_a[6]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C16      ; 418        ; 4        ; regn_do_b[7]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C17      ; 404        ; 4        ; regn_rd_sel_b[0]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C15      ; 421        ; 4        ; regn_wr_sel[2]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C16      ; 418        ; 4        ; z_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C17      ; 404        ; 4        ; regn_do_b[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C18      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C19      ; 391        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C19      ; 391        ; 4        ; z_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C20      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; C21      ; 375        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C22      ; 374        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C23      ; 373        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C24      ; 360        ; 5        ; z_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; C25      ; 361        ; 5        ; z_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; C24      ; 360        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C25      ; 361        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C26      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; D1       ; 13         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D2       ; 12         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -555,21 +555,21 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; D6       ; 467        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D7       ; 469        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D8       ; 464        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D9       ; 460        ; 3        ; c_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D9       ; 460        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D10      ; 449        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D11      ; 445        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D12      ; 443        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D13      ; 432        ; 3        ; regn_rd_sel_a[2]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D13      ; 432        ; 3        ; regn_rd_sel_a[1]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D14      ; 426        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D15      ; 417        ; 4        ; regn_di[0]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D16      ; 415        ; 4        ; regn_rd_sel_a[0]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D17      ; 403        ; 4        ; regn_di[6]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D18      ; 396        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D19      ; 392        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D15      ; 417        ; 4        ; regn_do_a[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D16      ; 415        ; 4        ; regn_do_a[1]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D17      ; 403        ; 4        ; v_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D18      ; 396        ; 4        ; regn_di[3]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D19      ; 392        ; 4        ; regn_do_a[7]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D20      ; 387        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D21      ; 376        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D22      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; D23      ; 369        ; 5        ; regn_wr_ena                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D23      ; 369        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D24      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D25      ; 358        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D26      ; 359        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -577,7 +577,7 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; E2       ; 19         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E3       ; 0          ; 2        ; ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
 ; E4       ;            ;          ; GND_PLL3                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; E5       ; 4          ; 2        ; c_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E5       ; 4          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E6       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E7       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E8       ; 474        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -587,12 +587,12 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; E12      ; 444        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E13      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E14      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; E15      ; 416        ; 4        ; regn_do_b[6]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E15      ; 416        ; 4        ; regn_do_b[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E16      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E17      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; E18      ; 395        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E18      ; 395        ; 4        ; regn_di[6]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; E20      ; 388        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E20      ; 388        ; 4        ; regn_wr_sel[1]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E21      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E22      ; 370        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E23      ; 365        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -611,18 +611,18 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; F10      ; 462        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F11      ; 454        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F12      ; 440        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F13      ; 423        ; 4        ; regn_do_b[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F14      ; 425        ; 4        ; regn_do_b[1]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F15      ; 409        ; 4        ; regn_rd_sel_a[1]                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F16      ; 408        ; 4        ; regn_di[2]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F17      ; 401        ; 4        ; regn_do_a[1]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F18      ; 398        ; 4        ; v_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F13      ; 423        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F14      ; 425        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F15      ; 409        ; 4        ; v_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F16      ; 408        ; 4        ; regn_do_b[0]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F17      ; 401        ; 4        ; regn_di[1]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F18      ; 398        ; 4        ; regn_di[7]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F19      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; F20      ; 372        ; 5        ; v_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F20      ; 372        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F21      ; 371        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; F23      ; 353        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F24      ; 354        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F23      ; 353        ; 5        ; regn_do_a[0]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F24      ; 354        ; 5        ; z_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F25      ; 350        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F26      ; 349        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G1       ; 30         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -637,18 +637,18 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; G10      ; 461        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G11      ; 446        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G12      ; 439        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G13      ; 422        ; 4        ; regn_do_b[0]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G14      ; 424        ; 4        ; regn_do_b[2]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G15      ; 410        ; 4        ; regn_do_a[5]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G16      ; 407        ; 4        ; regn_di[1]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G17      ; 402        ; 4        ; v_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G18      ; 397        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G13      ; 422        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G14      ; 424        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G15      ; 410        ; 4        ; v_flag_wr_ena                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G16      ; 407        ; 4        ; regn_do_a[4]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G17      ; 402        ; 4        ; regn_di[2]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G18      ; 397        ; 4        ; regn_di[5]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G19      ;            ;          ; VCCA_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G20      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; G21      ; 368        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G22      ; 367        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G23      ; 346        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G24      ; 345        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G23      ; 346        ; 5        ; regn_do_b[7]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G24      ; 345        ; 5        ; regn_do_b[6]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G25      ; 343        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G26      ; 342        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H1       ; 37         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -665,9 +665,9 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; H12      ; 455        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; H15      ; 414        ; 4        ; regn_do_a[3]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; H16      ; 413        ; 4        ; regn_wr_sel[1]                           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; H17      ; 400        ; 4        ; regn_di[5]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H15      ; 414        ; 4        ; c_flag_in                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H16      ; 413        ; 4        ; regn_do_a[5]                             ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H17      ; 400        ; 4        ; regn_di[0]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H18      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; H19      ; 335        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H20      ;            ;          ; VCCD_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -693,11 +693,11 @@ The pin-out file can be found in D:/git/VHDL_TP2/reg_bank/reg_bank.pin.
 ; J14      ; 441        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J15      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J16      ; 385        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J17      ; 399        ; 4        ; regn_di[3]                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J17      ; 399        ; 4        ; c_flag_out                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J18      ; 383        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J20      ; 351        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J21      ; 352        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J20      ; 351        ; 5        ; regn_rd_sel_b[0]                         ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J21      ; 352        ; 5        ; regn_wr_ena                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J23      ; 339        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J24      ; 338        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1035,7 +1035,7 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |reg_bank                  ; 38 (38)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 45   ; 0            ; 11 (11)      ; 0 (0)             ; 27 (27)          ; |reg_bank           ; work         ;
+; |reg_bank                  ; 94 (94)     ; 64 (64)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 45   ; 0            ; 30 (30)      ; 0 (0)             ; 64 (64)          ; |reg_bank           ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1045,9 +1045,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+----------+---------------+---------------+-----------------------+-----+
 ; Name             ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
 +------------------+----------+---------------+---------------+-----------------------+-----+
-; regn_wr_sel[2]   ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
-; regn_rd_sel_a[2] ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
-; regn_rd_sel_b[2] ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
 ; regn_do_a[0]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; regn_do_a[1]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; regn_do_a[2]     ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1067,167 +1064,236 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; c_flag_out       ; Output   ; --            ; --            ; --                    ; --  ;
 ; z_flag_out       ; Output   ; --            ; --            ; --                    ; --  ;
 ; v_flag_out       ; Output   ; --            ; --            ; --                    ; --  ;
-; regn_rd_sel_a[1] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_rd_sel_a[2] ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
+; regn_rd_sel_a[1] ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
 ; regn_rd_sel_a[0] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_rd_sel_b[2] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_rd_sel_b[1] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; regn_rd_sel_b[0] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_rd_sel_b[0] ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
 ; regn_di[0]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; clk_in           ; Input    ; (0) 299 ps    ; (0) 299 ps    ; --                    ; --  ;
 ; nrst             ; Input    ; (0) 299 ps    ; (0) 299 ps    ; --                    ; --  ;
-; regn_wr_sel[1]   ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; regn_wr_ena      ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
 ; regn_wr_sel[0]   ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_wr_sel[1]   ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_wr_sel[2]   ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; regn_wr_ena      ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
+; c_flag_in        ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; c_flag_wr_ena    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[1]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; z_flag_in        ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
+; z_flag_wr_ena    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[2]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; v_flag_in        ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; v_flag_wr_ena    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[3]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[4]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[5]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[6]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; regn_di[7]       ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; c_flag_in        ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; c_flag_wr_ena    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; z_flag_in        ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; z_flag_wr_ena    ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; v_flag_in        ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; v_flag_wr_ena    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 +------------------+----------+---------------+---------------+-----------------------+-----+
 
 
-+------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                       ;
-+------------------------+-------------------+---------+
-; Source Pin / Fanout    ; Pad To Core Index ; Setting ;
-+------------------------+-------------------+---------+
-; regn_wr_sel[2]         ;                   ;         ;
-; regn_rd_sel_a[2]       ;                   ;         ;
-; regn_rd_sel_b[2]       ;                   ;         ;
-; regn_rd_sel_a[1]       ;                   ;         ;
-;      - Mux7~0          ; 1                 ; 6       ;
-;      - Mux7~1          ; 1                 ; 6       ;
-;      - Mux6~0          ; 1                 ; 6       ;
-;      - Mux6~1          ; 1                 ; 6       ;
-;      - Mux5~0          ; 1                 ; 6       ;
-;      - Mux5~1          ; 1                 ; 6       ;
-;      - Mux4~0          ; 1                 ; 6       ;
-;      - Mux4~1          ; 1                 ; 6       ;
-;      - Mux3~0          ; 1                 ; 6       ;
-;      - Mux3~1          ; 1                 ; 6       ;
-;      - Mux2~0          ; 1                 ; 6       ;
-;      - Mux2~1          ; 1                 ; 6       ;
-;      - Mux1~0          ; 1                 ; 6       ;
-;      - Mux1~1          ; 1                 ; 6       ;
-;      - Mux0~0          ; 1                 ; 6       ;
-;      - Mux0~1          ; 1                 ; 6       ;
-; regn_rd_sel_a[0]       ;                   ;         ;
-;      - Mux7~0          ; 0                 ; 6       ;
-;      - Mux7~1          ; 0                 ; 6       ;
-;      - Mux6~0          ; 0                 ; 6       ;
-;      - Mux6~1          ; 0                 ; 6       ;
-;      - Mux5~0          ; 0                 ; 6       ;
-;      - Mux5~1          ; 0                 ; 6       ;
-;      - Mux4~0          ; 0                 ; 6       ;
-;      - Mux4~1          ; 0                 ; 6       ;
-;      - Mux3~0          ; 0                 ; 6       ;
-;      - Mux3~1          ; 0                 ; 6       ;
-;      - Mux2~0          ; 0                 ; 6       ;
-;      - Mux2~1          ; 0                 ; 6       ;
-;      - Mux1~0          ; 0                 ; 6       ;
-;      - Mux1~1          ; 0                 ; 6       ;
-;      - Mux0~0          ; 0                 ; 6       ;
-;      - Mux0~1          ; 0                 ; 6       ;
-; regn_rd_sel_b[1]       ;                   ;         ;
-;      - Mux15~0         ; 0                 ; 6       ;
-;      - Mux15~1         ; 0                 ; 6       ;
-;      - Mux14~0         ; 0                 ; 6       ;
-;      - Mux14~1         ; 0                 ; 6       ;
-;      - Mux13~0         ; 0                 ; 6       ;
-;      - Mux13~1         ; 0                 ; 6       ;
-;      - Mux12~0         ; 0                 ; 6       ;
-;      - Mux12~1         ; 0                 ; 6       ;
-;      - Mux11~0         ; 0                 ; 6       ;
-;      - Mux11~1         ; 0                 ; 6       ;
-;      - Mux10~0         ; 0                 ; 6       ;
-;      - Mux10~1         ; 0                 ; 6       ;
-;      - Mux9~0          ; 0                 ; 6       ;
-;      - Mux9~1          ; 0                 ; 6       ;
-;      - Mux8~0          ; 0                 ; 6       ;
-;      - Mux8~1          ; 0                 ; 6       ;
-; regn_rd_sel_b[0]       ;                   ;         ;
-;      - Mux15~0         ; 0                 ; 6       ;
-;      - Mux15~1         ; 0                 ; 6       ;
-;      - Mux14~0         ; 0                 ; 6       ;
-;      - Mux14~1         ; 0                 ; 6       ;
-;      - Mux13~0         ; 0                 ; 6       ;
-;      - Mux13~1         ; 0                 ; 6       ;
-;      - Mux12~0         ; 0                 ; 6       ;
-;      - Mux12~1         ; 0                 ; 6       ;
-;      - Mux11~0         ; 0                 ; 6       ;
-;      - Mux11~1         ; 0                 ; 6       ;
-;      - Mux10~0         ; 0                 ; 6       ;
-;      - Mux10~1         ; 0                 ; 6       ;
-;      - Mux9~0          ; 0                 ; 6       ;
-;      - Mux9~1          ; 0                 ; 6       ;
-;      - Mux8~0          ; 0                 ; 6       ;
-;      - Mux8~1          ; 0                 ; 6       ;
-; regn_di[0]             ;                   ;         ;
-;      - mem_reg[0][0]   ; 0                 ; 6       ;
-;      - mem_reg[2][0]   ; 0                 ; 6       ;
-;      - mem_reg[1][0]   ; 0                 ; 6       ;
-; clk_in                 ;                   ;         ;
-; nrst                   ;                   ;         ;
-; regn_wr_sel[1]         ;                   ;         ;
-;      - Decoder0~0      ; 1                 ; 6       ;
-;      - Decoder0~1      ; 1                 ; 6       ;
-;      - Decoder0~2      ; 1                 ; 6       ;
-; regn_wr_ena            ;                   ;         ;
-;      - Decoder0~0      ; 1                 ; 6       ;
-;      - Decoder0~1      ; 1                 ; 6       ;
-;      - Decoder0~2      ; 1                 ; 6       ;
-; regn_wr_sel[0]         ;                   ;         ;
-;      - Decoder0~0      ; 0                 ; 6       ;
-;      - Decoder0~1      ; 0                 ; 6       ;
-;      - Decoder0~2      ; 0                 ; 6       ;
-; regn_di[1]             ;                   ;         ;
-;      - mem_reg[0][1]   ; 0                 ; 6       ;
-;      - mem_reg[2][1]   ; 0                 ; 6       ;
-;      - mem_reg[1][1]   ; 0                 ; 6       ;
-; regn_di[2]             ;                   ;         ;
-;      - mem_reg[0][2]   ; 0                 ; 6       ;
-;      - mem_reg[2][2]   ; 0                 ; 6       ;
-;      - mem_reg[1][2]   ; 0                 ; 6       ;
-; regn_di[3]             ;                   ;         ;
-;      - mem_reg[0][3]   ; 0                 ; 6       ;
-;      - mem_reg[2][3]   ; 0                 ; 6       ;
-;      - mem_reg[1][3]   ; 0                 ; 6       ;
-; regn_di[4]             ;                   ;         ;
-;      - mem_reg[0][4]   ; 0                 ; 6       ;
-;      - mem_reg[2][4]   ; 0                 ; 6       ;
-;      - mem_reg[1][4]   ; 0                 ; 6       ;
-; regn_di[5]             ;                   ;         ;
-;      - mem_reg[0][5]   ; 0                 ; 6       ;
-;      - mem_reg[2][5]   ; 0                 ; 6       ;
-;      - mem_reg[1][5]   ; 0                 ; 6       ;
-; regn_di[6]             ;                   ;         ;
-;      - mem_reg[0][6]   ; 1                 ; 6       ;
-;      - mem_reg[2][6]   ; 1                 ; 6       ;
-;      - mem_reg[1][6]   ; 1                 ; 6       ;
-; regn_di[7]             ;                   ;         ;
-;      - mem_reg[0][7]   ; 0                 ; 6       ;
-;      - mem_reg[2][7]   ; 0                 ; 6       ;
-;      - mem_reg[1][7]   ; 0                 ; 6       ;
-; c_flag_in              ;                   ;         ;
-;      - mem_reg[7][0]~0 ; 0                 ; 6       ;
-; c_flag_wr_ena          ;                   ;         ;
-;      - mem_reg[7][0]~0 ; 0                 ; 6       ;
-; z_flag_in              ;                   ;         ;
-;      - mem_reg[7][1]~1 ; 1                 ; 6       ;
-; z_flag_wr_ena          ;                   ;         ;
-;      - mem_reg[7][1]~1 ; 0                 ; 6       ;
-; v_flag_in              ;                   ;         ;
-;      - mem_reg[7][2]~2 ; 0                 ; 6       ;
-; v_flag_wr_ena          ;                   ;         ;
-;      - mem_reg[7][2]~2 ; 1                 ; 6       ;
-+------------------------+-------------------+---------+
++----------------------------------------------------+
+; Pad To Core Delay Chain Fanout                     ;
++----------------------+-------------------+---------+
+; Source Pin / Fanout  ; Pad To Core Index ; Setting ;
++----------------------+-------------------+---------+
+; regn_rd_sel_a[2]     ;                   ;         ;
+; regn_rd_sel_a[1]     ;                   ;         ;
+; regn_rd_sel_a[0]     ;                   ;         ;
+;      - Mux7~4        ; 0                 ; 6       ;
+;      - Mux6~4        ; 0                 ; 6       ;
+;      - Mux5~4        ; 0                 ; 6       ;
+;      - Mux4~4        ; 0                 ; 6       ;
+;      - Mux3~4        ; 0                 ; 6       ;
+;      - Mux2~4        ; 0                 ; 6       ;
+;      - Mux1~4        ; 0                 ; 6       ;
+;      - Mux0~4        ; 0                 ; 6       ;
+; regn_rd_sel_b[2]     ;                   ;         ;
+;      - Mux15~0       ; 0                 ; 6       ;
+;      - Mux15~1       ; 0                 ; 6       ;
+;      - Mux15~2       ; 0                 ; 6       ;
+;      - Mux14~0       ; 0                 ; 6       ;
+;      - Mux14~1       ; 0                 ; 6       ;
+;      - Mux14~2       ; 0                 ; 6       ;
+;      - Mux13~0       ; 0                 ; 6       ;
+;      - Mux13~1       ; 0                 ; 6       ;
+;      - Mux13~2       ; 0                 ; 6       ;
+;      - Mux12~0       ; 0                 ; 6       ;
+;      - Mux12~1       ; 0                 ; 6       ;
+;      - Mux12~2       ; 0                 ; 6       ;
+;      - Mux11~0       ; 0                 ; 6       ;
+;      - Mux11~1       ; 0                 ; 6       ;
+;      - Mux11~2       ; 0                 ; 6       ;
+;      - Mux10~0       ; 0                 ; 6       ;
+;      - Mux10~1       ; 0                 ; 6       ;
+;      - Mux10~2       ; 0                 ; 6       ;
+;      - Mux9~0        ; 0                 ; 6       ;
+;      - Mux9~1        ; 0                 ; 6       ;
+;      - Mux9~2        ; 0                 ; 6       ;
+;      - Mux8~0        ; 0                 ; 6       ;
+;      - Mux8~1        ; 0                 ; 6       ;
+;      - Mux8~2        ; 0                 ; 6       ;
+; regn_rd_sel_b[1]     ;                   ;         ;
+;      - Mux15~0       ; 0                 ; 6       ;
+;      - Mux15~2       ; 0                 ; 6       ;
+;      - Mux15~3       ; 0                 ; 6       ;
+;      - Mux14~0       ; 0                 ; 6       ;
+;      - Mux14~2       ; 0                 ; 6       ;
+;      - Mux14~3       ; 0                 ; 6       ;
+;      - Mux13~0       ; 0                 ; 6       ;
+;      - Mux13~2       ; 0                 ; 6       ;
+;      - Mux13~3       ; 0                 ; 6       ;
+;      - Mux12~0       ; 0                 ; 6       ;
+;      - Mux12~2       ; 0                 ; 6       ;
+;      - Mux12~3       ; 0                 ; 6       ;
+;      - Mux11~0       ; 0                 ; 6       ;
+;      - Mux11~2       ; 0                 ; 6       ;
+;      - Mux11~3       ; 0                 ; 6       ;
+;      - Mux10~0       ; 0                 ; 6       ;
+;      - Mux10~2       ; 0                 ; 6       ;
+;      - Mux10~3       ; 0                 ; 6       ;
+;      - Mux9~0        ; 0                 ; 6       ;
+;      - Mux9~2        ; 0                 ; 6       ;
+;      - Mux9~3        ; 0                 ; 6       ;
+;      - Mux8~0        ; 0                 ; 6       ;
+;      - Mux8~2        ; 0                 ; 6       ;
+;      - Mux8~3        ; 0                 ; 6       ;
+; regn_rd_sel_b[0]     ;                   ;         ;
+;      - Mux15~4       ; 1                 ; 6       ;
+;      - Mux14~4       ; 1                 ; 6       ;
+;      - Mux13~4       ; 1                 ; 6       ;
+;      - Mux12~4       ; 1                 ; 6       ;
+;      - Mux11~4       ; 1                 ; 6       ;
+;      - Mux10~4       ; 1                 ; 6       ;
+;      - Mux9~4        ; 1                 ; 6       ;
+;      - Mux8~4        ; 1                 ; 6       ;
+; regn_di[0]           ;                   ;         ;
+;      - mem_reg[0][0] ; 0                 ; 6       ;
+;      - mem_reg[4][0] ; 0                 ; 6       ;
+;      - mem_reg[2][0] ; 0                 ; 6       ;
+;      - mem_reg[6][0] ; 0                 ; 6       ;
+;      - mem_reg[1][0] ; 0                 ; 6       ;
+;      - mem_reg[5][0] ; 0                 ; 6       ;
+;      - mem_reg[3][0] ; 0                 ; 6       ;
+;      - mem_reg~1     ; 0                 ; 6       ;
+; clk_in               ;                   ;         ;
+; nrst                 ;                   ;         ;
+; regn_wr_sel[0]       ;                   ;         ;
+;      - Decoder0~0    ; 0                 ; 6       ;
+;      - Decoder0~1    ; 0                 ; 6       ;
+;      - Decoder0~2    ; 0                 ; 6       ;
+;      - Decoder0~3    ; 0                 ; 6       ;
+;      - Decoder0~4    ; 0                 ; 6       ;
+;      - Decoder0~5    ; 0                 ; 6       ;
+;      - Decoder0~6    ; 0                 ; 6       ;
+;      - Decoder0~7    ; 0                 ; 6       ;
+; regn_wr_sel[1]       ;                   ;         ;
+;      - Decoder0~0    ; 0                 ; 6       ;
+;      - Decoder0~1    ; 0                 ; 6       ;
+;      - Decoder0~2    ; 0                 ; 6       ;
+;      - Decoder0~3    ; 0                 ; 6       ;
+;      - Decoder0~4    ; 0                 ; 6       ;
+;      - Decoder0~5    ; 0                 ; 6       ;
+;      - Decoder0~6    ; 0                 ; 6       ;
+;      - Decoder0~7    ; 0                 ; 6       ;
+; regn_wr_sel[2]       ;                   ;         ;
+;      - Decoder0~0    ; 1                 ; 6       ;
+;      - Decoder0~1    ; 1                 ; 6       ;
+;      - Decoder0~2    ; 1                 ; 6       ;
+;      - Decoder0~3    ; 1                 ; 6       ;
+;      - Decoder0~4    ; 1                 ; 6       ;
+;      - Decoder0~5    ; 1                 ; 6       ;
+;      - Decoder0~6    ; 1                 ; 6       ;
+;      - Decoder0~7    ; 1                 ; 6       ;
+; regn_wr_ena          ;                   ;         ;
+;      - Decoder0~0    ; 0                 ; 6       ;
+;      - Decoder0~1    ; 0                 ; 6       ;
+;      - Decoder0~2    ; 0                 ; 6       ;
+;      - Decoder0~3    ; 0                 ; 6       ;
+;      - Decoder0~4    ; 0                 ; 6       ;
+;      - Decoder0~5    ; 0                 ; 6       ;
+;      - Decoder0~6    ; 0                 ; 6       ;
+;      - Decoder0~7    ; 0                 ; 6       ;
+; c_flag_in            ;                   ;         ;
+;      - mem_reg~0     ; 1                 ; 6       ;
+; c_flag_wr_ena        ;                   ;         ;
+;      - mem_reg~0     ; 1                 ; 6       ;
+;      - mem_reg~1     ; 1                 ; 6       ;
+; regn_di[1]           ;                   ;         ;
+;      - mem_reg[0][1] ; 1                 ; 6       ;
+;      - mem_reg[4][1] ; 1                 ; 6       ;
+;      - mem_reg[2][1] ; 1                 ; 6       ;
+;      - mem_reg[6][1] ; 1                 ; 6       ;
+;      - mem_reg[1][1] ; 1                 ; 6       ;
+;      - mem_reg[5][1] ; 1                 ; 6       ;
+;      - mem_reg[3][1] ; 1                 ; 6       ;
+;      - mem_reg~3     ; 1                 ; 6       ;
+; z_flag_in            ;                   ;         ;
+;      - mem_reg~2     ; 0                 ; 6       ;
+; z_flag_wr_ena        ;                   ;         ;
+;      - mem_reg~2     ; 0                 ; 6       ;
+;      - mem_reg~3     ; 0                 ; 6       ;
+; regn_di[2]           ;                   ;         ;
+;      - mem_reg[0][2] ; 0                 ; 6       ;
+;      - mem_reg[4][2] ; 0                 ; 6       ;
+;      - mem_reg[2][2] ; 0                 ; 6       ;
+;      - mem_reg[6][2] ; 0                 ; 6       ;
+;      - mem_reg[1][2] ; 0                 ; 6       ;
+;      - mem_reg[5][2] ; 0                 ; 6       ;
+;      - mem_reg[3][2] ; 0                 ; 6       ;
+;      - mem_reg~5     ; 0                 ; 6       ;
+; v_flag_in            ;                   ;         ;
+;      - mem_reg~4     ; 1                 ; 6       ;
+; v_flag_wr_ena        ;                   ;         ;
+;      - mem_reg~4     ; 1                 ; 6       ;
+;      - mem_reg~5     ; 1                 ; 6       ;
+; regn_di[3]           ;                   ;         ;
+;      - mem_reg[0][3] ; 0                 ; 6       ;
+;      - mem_reg[4][3] ; 0                 ; 6       ;
+;      - mem_reg[2][3] ; 0                 ; 6       ;
+;      - mem_reg[6][3] ; 0                 ; 6       ;
+;      - mem_reg[1][3] ; 0                 ; 6       ;
+;      - mem_reg[5][3] ; 0                 ; 6       ;
+;      - mem_reg[3][3] ; 0                 ; 6       ;
+;      - mem_reg[7][3] ; 0                 ; 6       ;
+; regn_di[4]           ;                   ;         ;
+;      - mem_reg[0][4] ; 0                 ; 6       ;
+;      - mem_reg[4][4] ; 0                 ; 6       ;
+;      - mem_reg[2][4] ; 0                 ; 6       ;
+;      - mem_reg[6][4] ; 0                 ; 6       ;
+;      - mem_reg[1][4] ; 0                 ; 6       ;
+;      - mem_reg[5][4] ; 0                 ; 6       ;
+;      - mem_reg[3][4] ; 0                 ; 6       ;
+;      - mem_reg[7][4] ; 0                 ; 6       ;
+; regn_di[5]           ;                   ;         ;
+;      - mem_reg[0][5] ; 0                 ; 6       ;
+;      - mem_reg[4][5] ; 0                 ; 6       ;
+;      - mem_reg[2][5] ; 0                 ; 6       ;
+;      - mem_reg[6][5] ; 0                 ; 6       ;
+;      - mem_reg[1][5] ; 0                 ; 6       ;
+;      - mem_reg[5][5] ; 0                 ; 6       ;
+;      - mem_reg[3][5] ; 0                 ; 6       ;
+;      - mem_reg[7][5] ; 0                 ; 6       ;
+; regn_di[6]           ;                   ;         ;
+;      - mem_reg[0][6] ; 0                 ; 6       ;
+;      - mem_reg[4][6] ; 0                 ; 6       ;
+;      - mem_reg[2][6] ; 0                 ; 6       ;
+;      - mem_reg[6][6] ; 0                 ; 6       ;
+;      - mem_reg[1][6] ; 0                 ; 6       ;
+;      - mem_reg[5][6] ; 0                 ; 6       ;
+;      - mem_reg[3][6] ; 0                 ; 6       ;
+;      - mem_reg[7][6] ; 0                 ; 6       ;
+; regn_di[7]           ;                   ;         ;
+;      - mem_reg[0][7] ; 1                 ; 6       ;
+;      - mem_reg[4][7] ; 1                 ; 6       ;
+;      - mem_reg[2][7] ; 1                 ; 6       ;
+;      - mem_reg[6][7] ; 1                 ; 6       ;
+;      - mem_reg[1][7] ; 1                 ; 6       ;
+;      - mem_reg[5][7] ; 1                 ; 6       ;
+;      - mem_reg[3][7] ; 1                 ; 6       ;
+;      - mem_reg[7][7] ; 1                 ; 6       ;
++----------------------+-------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -1235,11 +1301,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name       ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Decoder0~0 ; LCCOMB_X41_Y35_N4  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Decoder0~1 ; LCCOMB_X42_Y35_N20 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Decoder0~2 ; LCCOMB_X41_Y35_N30 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; clk_in     ; PIN_P2             ; 27      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; nrst       ; PIN_P1             ; 27      ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; Decoder0~0 ; LCCOMB_X49_Y30_N20 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~1 ; LCCOMB_X49_Y30_N22 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~2 ; LCCOMB_X49_Y30_N24 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~3 ; LCCOMB_X49_Y30_N18 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~4 ; LCCOMB_X49_Y30_N14 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~5 ; LCCOMB_X49_Y30_N16 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~6 ; LCCOMB_X49_Y30_N2  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Decoder0~7 ; LCCOMB_X49_Y30_N12 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk_in     ; PIN_P2             ; 64      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; nrst       ; PIN_P1             ; 64      ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 +------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1248,8 +1319,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+----------+---------+----------------------+------------------+---------------------------+
 ; Name   ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------+----------+---------+----------------------+------------------+---------------------------+
-; clk_in ; PIN_P2   ; 27      ; Global Clock         ; GCLK3            ; --                        ;
-; nrst   ; PIN_P1   ; 27      ; Global Clock         ; GCLK1            ; --                        ;
+; clk_in ; PIN_P2   ; 64      ; Global Clock         ; GCLK3            ; --                        ;
+; nrst   ; PIN_P1   ; 64      ; Global Clock         ; GCLK1            ; --                        ;
 +--------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1258,124 +1329,125 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+--------------+
 ; Name             ; Fan-Out      ;
 +------------------+--------------+
-; regn_rd_sel_b[0] ; 16           ;
-; regn_rd_sel_b[1] ; 16           ;
-; regn_rd_sel_a[0] ; 16           ;
-; regn_rd_sel_a[1] ; 16           ;
+; regn_rd_sel_b[1] ; 24           ;
+; regn_rd_sel_b[2] ; 24           ;
+; regn_rd_sel_a[1] ; 24           ;
+; regn_rd_sel_a[2] ; 24           ;
+; Decoder0~3       ; 11           ;
+; regn_di[7]       ; 8            ;
+; regn_di[6]       ; 8            ;
+; regn_di[5]       ; 8            ;
+; regn_di[4]       ; 8            ;
+; regn_di[3]       ; 8            ;
+; regn_di[2]       ; 8            ;
+; regn_di[1]       ; 8            ;
+; regn_wr_ena      ; 8            ;
+; regn_wr_sel[2]   ; 8            ;
+; regn_wr_sel[1]   ; 8            ;
+; regn_wr_sel[0]   ; 8            ;
+; regn_di[0]       ; 8            ;
+; regn_rd_sel_b[0] ; 8            ;
+; regn_rd_sel_a[0] ; 8            ;
+; Decoder0~7       ; 8            ;
+; Decoder0~6       ; 8            ;
+; Decoder0~5       ; 8            ;
+; Decoder0~4       ; 8            ;
 ; Decoder0~2       ; 8            ;
 ; Decoder0~1       ; 8            ;
 ; Decoder0~0       ; 8            ;
-; regn_di[7]       ; 3            ;
-; regn_di[6]       ; 3            ;
-; regn_di[5]       ; 3            ;
-; regn_di[4]       ; 3            ;
-; regn_di[3]       ; 3            ;
-; regn_di[2]       ; 3            ;
-; regn_di[1]       ; 3            ;
-; regn_wr_sel[0]   ; 3            ;
-; regn_wr_ena      ; 3            ;
-; regn_wr_sel[1]   ; 3            ;
-; regn_di[0]       ; 3            ;
-; mem_reg[7][2]    ; 2            ;
-; mem_reg[7][1]    ; 2            ;
-; mem_reg[7][0]    ; 2            ;
-; mem_reg[1][7]    ; 2            ;
+; mem_reg[7][2]    ; 4            ;
+; mem_reg[7][1]    ; 4            ;
+; mem_reg[7][0]    ; 4            ;
+; v_flag_wr_ena    ; 2            ;
+; z_flag_wr_ena    ; 2            ;
+; c_flag_wr_ena    ; 2            ;
+; mem_reg[6][7]    ; 2            ;
 ; mem_reg[0][7]    ; 2            ;
+; mem_reg[4][7]    ; 2            ;
 ; mem_reg[2][7]    ; 2            ;
-; mem_reg[1][6]    ; 2            ;
+; mem_reg[7][7]    ; 2            ;
+; mem_reg[1][7]    ; 2            ;
+; mem_reg[3][7]    ; 2            ;
+; mem_reg[5][7]    ; 2            ;
+; mem_reg[6][6]    ; 2            ;
 ; mem_reg[0][6]    ; 2            ;
+; mem_reg[4][6]    ; 2            ;
 ; mem_reg[2][6]    ; 2            ;
-; mem_reg[1][5]    ; 2            ;
+; mem_reg[7][6]    ; 2            ;
+; mem_reg[1][6]    ; 2            ;
+; mem_reg[3][6]    ; 2            ;
+; mem_reg[5][6]    ; 2            ;
+; mem_reg[6][5]    ; 2            ;
 ; mem_reg[0][5]    ; 2            ;
-; mem_reg[2][5]    ; 2            ;
-; mem_reg[1][4]    ; 2            ;
-; mem_reg[0][4]    ; 2            ;
-; mem_reg[2][4]    ; 2            ;
-; mem_reg[1][3]    ; 2            ;
-; mem_reg[0][3]    ; 2            ;
-; mem_reg[2][3]    ; 2            ;
-; mem_reg[1][2]    ; 2            ;
-; mem_reg[0][2]    ; 2            ;
-; mem_reg[2][2]    ; 2            ;
-; mem_reg[1][1]    ; 2            ;
-; mem_reg[0][1]    ; 2            ;
-; mem_reg[2][1]    ; 2            ;
-; mem_reg[1][0]    ; 2            ;
-; mem_reg[0][0]    ; 2            ;
-; mem_reg[2][0]    ; 2            ;
-; v_flag_wr_ena    ; 1            ;
-; v_flag_in        ; 1            ;
-; z_flag_wr_ena    ; 1            ;
-; z_flag_in        ; 1            ;
-; c_flag_wr_ena    ; 1            ;
 +------------------+--------------+
 
 
-+----------------------------------------------------+
-; Interconnect Usage Summary                         ;
-+----------------------------+-----------------------+
-; Interconnect Resource Type ; Usage                 ;
-+----------------------------+-----------------------+
-; Block interconnects        ; 84 / 94,460 ( < 1 % ) ;
-; C16 interconnects          ; 0 / 3,315 ( 0 % )     ;
-; C4 interconnects           ; 55 / 60,840 ( < 1 % ) ;
-; Direct links               ; 12 / 94,460 ( < 1 % ) ;
-; Global clocks              ; 2 / 16 ( 13 % )       ;
-; Local interconnects        ; 18 / 33,216 ( < 1 % ) ;
-; R24 interconnects          ; 2 / 3,091 ( < 1 % )   ;
-; R4 interconnects           ; 64 / 81,294 ( < 1 % ) ;
-+----------------------------+-----------------------+
++-----------------------------------------------------+
+; Interconnect Usage Summary                          ;
++----------------------------+------------------------+
+; Interconnect Resource Type ; Usage                  ;
++----------------------------+------------------------+
+; Block interconnects        ; 175 / 94,460 ( < 1 % ) ;
+; C16 interconnects          ; 18 / 3,315 ( < 1 % )   ;
+; C4 interconnects           ; 109 / 60,840 ( < 1 % ) ;
+; Direct links               ; 32 / 94,460 ( < 1 % )  ;
+; Global clocks              ; 2 / 16 ( 13 % )        ;
+; Local interconnects        ; 66 / 33,216 ( < 1 % )  ;
+; R24 interconnects          ; 8 / 3,091 ( < 1 % )    ;
+; R4 interconnects           ; 104 / 81,294 ( < 1 % ) ;
++----------------------------+------------------------+
 
 
-+--------------------------------------------------------------------------+
-; LAB Logic Elements                                                       ;
-+--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 6.33) ; Number of LABs  (Total = 6) ;
-+--------------------------------------------+-----------------------------+
-; 1                                          ; 3                           ;
-; 2                                          ; 0                           ;
-; 3                                          ; 1                           ;
-; 4                                          ; 0                           ;
-; 5                                          ; 0                           ;
-; 6                                          ; 0                           ;
-; 7                                          ; 0                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 0                           ;
-; 11                                         ; 0                           ;
-; 12                                         ; 0                           ;
-; 13                                         ; 0                           ;
-; 14                                         ; 0                           ;
-; 15                                         ; 0                           ;
-; 16                                         ; 2                           ;
-+--------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++---------------------------------------------+-----------------------------+
+; Number of Logic Elements  (Average = 11.75) ; Number of LABs  (Total = 8) ;
++---------------------------------------------+-----------------------------+
+; 1                                           ; 1                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 0                           ;
+; 4                                           ; 1                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 1                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 1                           ;
+; 15                                          ; 1                           ;
+; 16                                          ; 3                           ;
++---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 2.17) ; Number of LABs  (Total = 6) ;
+; LAB-wide Signals  (Average = 2.88) ; Number of LABs  (Total = 8) ;
 +------------------------------------+-----------------------------+
-; 1 Async. clear                     ; 6                           ;
-; 1 Clock                            ; 6                           ;
-; 2 Clock enables                    ; 1                           ;
+; 1 Async. clear                     ; 8                           ;
+; 1 Clock                            ; 8                           ;
+; 1 Clock enable                     ; 2                           ;
+; 2 Clock enables                    ; 5                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 10.83) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced  (Average = 19.75) ; Number of LABs  (Total = 8) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 3                           ;
+; 2                                            ; 1                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
-; 5                                            ; 1                           ;
+; 5                                            ; 0                           ;
 ; 6                                            ; 0                           ;
 ; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
+; 8                                            ; 1                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
@@ -1386,7 +1458,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 16                                           ; 0                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
+; 19                                           ; 3                           ;
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
 ; 22                                           ; 0                           ;
@@ -1394,61 +1466,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 24                                           ; 0                           ;
 ; 25                                           ; 0                           ;
 ; 26                                           ; 0                           ;
-; 27                                           ; 2                           ;
+; 27                                           ; 1                           ;
+; 28                                           ; 0                           ;
+; 29                                           ; 0                           ;
+; 30                                           ; 0                           ;
+; 31                                           ; 0                           ;
+; 32                                           ; 2                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 6.67) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced Out  (Average = 9.88) ; Number of LABs  (Total = 8) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 3                           ;
-; 2                                               ; 0                           ;
+; 1                                               ; 0                           ;
+; 2                                               ; 1                           ;
 ; 3                                               ; 0                           ;
-; 4                                               ; 0                           ;
-; 5                                               ; 1                           ;
+; 4                                               ; 1                           ;
+; 5                                               ; 0                           ;
 ; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 0                           ;
+; 8                                               ; 1                           ;
+; 9                                               ; 1                           ;
 ; 10                                              ; 0                           ;
 ; 11                                              ; 0                           ;
-; 12                                              ; 1                           ;
+; 12                                              ; 2                           ;
 ; 13                                              ; 0                           ;
 ; 14                                              ; 0                           ;
 ; 15                                              ; 0                           ;
-; 16                                              ; 0                           ;
-; 17                                              ; 0                           ;
-; 18                                              ; 0                           ;
-; 19                                              ; 0                           ;
-; 20                                              ; 1                           ;
+; 16                                              ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 11.83) ; Number of LABs  (Total = 6) ;
+; Number of Distinct Inputs  (Average = 19.13) ; Number of LABs  (Total = 8) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 3                           ;
+; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
 ; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
+; 7                                            ; 1                           ;
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
-; 11                                           ; 1                           ;
-; 12                                           ; 0                           ;
+; 11                                           ; 0                           ;
+; 12                                           ; 1                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
+; 16                                           ; 2                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
@@ -1457,10 +1530,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
-; 25                                           ; 0                           ;
+; 25                                           ; 1                           ;
 ; 26                                           ; 0                           ;
 ; 27                                           ; 0                           ;
 ; 28                                           ; 1                           ;
+; 29                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -1506,7 +1580,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 07 21:25:53 2024
+    Info: Processing started: Fri May 10 20:11:07 2024
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off reg_bank -c reg_bank
 Info: Selected device EP2C35F672C6 for design "reg_bank"
 Info: Low junction temperature is 0 degrees C
@@ -1521,9 +1595,6 @@ Info: Fitter converted 3 user pins into dedicated programming pins
     Info: Pin ~nCSO~ is reserved at location D3
     Info: Pin ~LVDS150p/nCEO~ is reserved at location AE24
 Critical Warning: No exact pin location assignment(s) for 45 pins of 45 total pins
-    Info: Pin regn_wr_sel[2] not assigned to an exact location on the device
-    Info: Pin regn_rd_sel_a[2] not assigned to an exact location on the device
-    Info: Pin regn_rd_sel_b[2] not assigned to an exact location on the device
     Info: Pin regn_do_a[0] not assigned to an exact location on the device
     Info: Pin regn_do_a[1] not assigned to an exact location on the device
     Info: Pin regn_do_a[2] not assigned to an exact location on the device
@@ -1543,29 +1614,32 @@ Critical Warning: No exact pin location assignment(s) for 45 pins of 45 total pi
     Info: Pin c_flag_out not assigned to an exact location on the device
     Info: Pin z_flag_out not assigned to an exact location on the device
     Info: Pin v_flag_out not assigned to an exact location on the device
+    Info: Pin regn_rd_sel_a[2] not assigned to an exact location on the device
     Info: Pin regn_rd_sel_a[1] not assigned to an exact location on the device
     Info: Pin regn_rd_sel_a[0] not assigned to an exact location on the device
+    Info: Pin regn_rd_sel_b[2] not assigned to an exact location on the device
     Info: Pin regn_rd_sel_b[1] not assigned to an exact location on the device
     Info: Pin regn_rd_sel_b[0] not assigned to an exact location on the device
     Info: Pin regn_di[0] not assigned to an exact location on the device
     Info: Pin clk_in not assigned to an exact location on the device
     Info: Pin nrst not assigned to an exact location on the device
-    Info: Pin regn_wr_sel[1] not assigned to an exact location on the device
-    Info: Pin regn_wr_ena not assigned to an exact location on the device
     Info: Pin regn_wr_sel[0] not assigned to an exact location on the device
+    Info: Pin regn_wr_sel[1] not assigned to an exact location on the device
+    Info: Pin regn_wr_sel[2] not assigned to an exact location on the device
+    Info: Pin regn_wr_ena not assigned to an exact location on the device
+    Info: Pin c_flag_in not assigned to an exact location on the device
+    Info: Pin c_flag_wr_ena not assigned to an exact location on the device
     Info: Pin regn_di[1] not assigned to an exact location on the device
+    Info: Pin z_flag_in not assigned to an exact location on the device
+    Info: Pin z_flag_wr_ena not assigned to an exact location on the device
     Info: Pin regn_di[2] not assigned to an exact location on the device
+    Info: Pin v_flag_in not assigned to an exact location on the device
+    Info: Pin v_flag_wr_ena not assigned to an exact location on the device
     Info: Pin regn_di[3] not assigned to an exact location on the device
     Info: Pin regn_di[4] not assigned to an exact location on the device
     Info: Pin regn_di[5] not assigned to an exact location on the device
     Info: Pin regn_di[6] not assigned to an exact location on the device
     Info: Pin regn_di[7] not assigned to an exact location on the device
-    Info: Pin c_flag_in not assigned to an exact location on the device
-    Info: Pin c_flag_wr_ena not assigned to an exact location on the device
-    Info: Pin z_flag_in not assigned to an exact location on the device
-    Info: Pin z_flag_wr_ena not assigned to an exact location on the device
-    Info: Pin v_flag_in not assigned to an exact location on the device
-    Info: Pin v_flag_wr_ena not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
 Info: Timing requirements not specified -- quality metrics such as performance and power consumption may be sacrificed to reduce compilation time.
 Info: Automatically promoted node clk_in (placed in PIN P2 (CLK2, LVDSCLK1p, Input))
@@ -1594,21 +1668,22 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to register delay of 0.575 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X16_Y34; Fanout = 2; REG Node = 'mem_reg[7][0]'
-    Info: 2: + IC(0.071 ns) + CELL(0.420 ns) = 0.491 ns; Loc. = LAB_X16_Y34; Fanout = 1; COMB Node = 'mem_reg[7][0]~0'
-    Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.575 ns; Loc. = LAB_X16_Y34; Fanout = 2; REG Node = 'mem_reg[7][0]'
-    Info: Total cell delay = 0.504 ns ( 87.65 % )
-    Info: Total interconnect delay = 0.071 ns ( 12.35 % )
+Info: Estimated most critical path is register to register delay of 1.272 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X49_Y30; Fanout = 4; REG Node = 'mem_reg[7][0]'
+    Info: 2: + IC(0.348 ns) + CELL(0.275 ns) = 0.623 ns; Loc. = LAB_X49_Y30; Fanout = 1; COMB Node = 'mem_reg~0'
+    Info: 3: + IC(0.127 ns) + CELL(0.438 ns) = 1.188 ns; Loc. = LAB_X49_Y30; Fanout = 1; COMB Node = 'mem_reg~1'
+    Info: 4: + IC(0.000 ns) + CELL(0.084 ns) = 1.272 ns; Loc. = LAB_X49_Y30; Fanout = 4; REG Node = 'mem_reg[7][0]'
+    Info: Total cell delay = 0.797 ns ( 62.66 % )
+    Info: Total interconnect delay = 0.475 ns ( 37.34 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
-    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
+    Info: Peak interconnect usage is 2% of the available device resources in the region that extends from location X44_Y24 to location X54_Y36
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
@@ -1636,9 +1711,9 @@ Warning: Found 19 output pins without output pin load capacitance assignment
     Info: Pin "v_flag_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info: Delay annotation completed successfully
 Info: Quartus II Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 284 megabytes
-    Info: Processing ended: Tue May 07 21:25:57 2024
+    Info: Peak virtual memory: 283 megabytes
+    Info: Processing ended: Fri May 10 20:11:11 2024
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 
