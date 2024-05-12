@@ -1,5 +1,5 @@
 Simulator report for prog_cnt
-Wed May 08 22:38:31 2024
+Thu May 09 21:18:13 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 66 nodes     ;
-; Simulation Coverage         ;      39.39 % ;
-; Total Number of Transitions ; 3314         ;
+; Simulation Netlist Size     ; 309 nodes    ;
+; Simulation Coverage         ;      18.77 % ;
+; Total Number of Transitions ; 2684         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -76,7 +76,7 @@ applicable agreement for further details.
 ; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
 ; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
 ; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
 ; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
 +--------------------------------------------------------------------------------------------+------------+---------------+
 
@@ -93,147 +93,599 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      39.39 % ;
-; Total nodes checked                                 ; 66           ;
-; Total output ports checked                          ; 66           ;
-; Total output ports with complete 1/0-value coverage ; 26           ;
-; Total output ports with no 1/0-value coverage       ; 40           ;
-; Total output ports with no 1-value coverage         ; 40           ;
-; Total output ports with no 0-value coverage         ; 40           ;
+; Total coverage as a percentage                      ;      18.77 % ;
+; Total nodes checked                                 ; 309          ;
+; Total output ports checked                          ; 309          ;
+; Total output ports with complete 1/0-value coverage ; 58           ;
+; Total output ports with no 1/0-value coverage       ; 249          ;
+; Total output ports with no 1-value coverage         ; 249          ;
+; Total output ports with no 0-value coverage         ; 251          ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+--------------------------------------------------------+
-; Complete 1/0-Value Coverage                            ;
-+------------------+------------------+------------------+
-; Node Name        ; Output Port Name ; Output Port Type ;
-+------------------+------------------+------------------+
-; |prog_cnt|cnt~1  ; |prog_cnt|cnt~1  ; out              ;
-; |prog_cnt|cnt~2  ; |prog_cnt|cnt~2  ; out              ;
-; |prog_cnt|cnt~4  ; |prog_cnt|cnt~4  ; out              ;
-; |prog_cnt|cnt~6  ; |prog_cnt|cnt~6  ; out              ;
-; |prog_cnt|cnt~7  ; |prog_cnt|cnt~7  ; out              ;
-; |prog_cnt|cnt~8  ; |prog_cnt|cnt~8  ; out              ;
-; |prog_cnt|cnt~9  ; |prog_cnt|cnt~9  ; out              ;
-; |prog_cnt|cnt~10 ; |prog_cnt|cnt~10 ; out              ;
-; |prog_cnt|cnt[3] ; |prog_cnt|cnt[3] ; regout           ;
-; |prog_cnt|cnt[2] ; |prog_cnt|cnt[2] ; regout           ;
-; |prog_cnt|cnt[1] ; |prog_cnt|cnt[1] ; regout           ;
-; |prog_cnt|cnt[0] ; |prog_cnt|cnt[0] ; regout           ;
-; |prog_cnt|clk    ; |prog_cnt|clk    ; out              ;
-; |prog_cnt|nrst   ; |prog_cnt|nrst   ; out              ;
-; |prog_cnt|load   ; |prog_cnt|load   ; out              ;
-; |prog_cnt|q[0]   ; |prog_cnt|q[0]   ; pin_out          ;
-; |prog_cnt|q[1]   ; |prog_cnt|q[1]   ; pin_out          ;
-; |prog_cnt|q[2]   ; |prog_cnt|q[2]   ; pin_out          ;
-; |prog_cnt|q[3]   ; |prog_cnt|q[3]   ; pin_out          ;
-; |prog_cnt|Add0~0 ; |prog_cnt|Add0~0 ; out0             ;
-; |prog_cnt|Add0~1 ; |prog_cnt|Add0~1 ; out0             ;
-; |prog_cnt|Add0~2 ; |prog_cnt|Add0~2 ; out0             ;
-; |prog_cnt|Add0~3 ; |prog_cnt|Add0~3 ; out0             ;
-; |prog_cnt|Add0~4 ; |prog_cnt|Add0~4 ; out0             ;
-; |prog_cnt|Add0~5 ; |prog_cnt|Add0~5 ; out0             ;
-; |prog_cnt|Add0~6 ; |prog_cnt|Add0~6 ; out0             ;
-+------------------+------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                          ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; Node Name                                                       ; Output Port Name                                                ; Output Port Type ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; |prog_cnt|cnt[5]                                                ; |prog_cnt|cnt[5]                                                ; regout           ;
+; |prog_cnt|cnt[4]                                                ; |prog_cnt|cnt[4]                                                ; regout           ;
+; |prog_cnt|cnt[3]                                                ; |prog_cnt|cnt[3]                                                ; regout           ;
+; |prog_cnt|cnt[2]                                                ; |prog_cnt|cnt[2]                                                ; regout           ;
+; |prog_cnt|cnt[1]                                                ; |prog_cnt|cnt[1]                                                ; regout           ;
+; |prog_cnt|cnt[0]                                                ; |prog_cnt|cnt[0]                                                ; regout           ;
+; |prog_cnt|clk_in                                                ; |prog_cnt|clk_in                                                ; out              ;
+; |prog_cnt|next_pc_out[0]                                        ; |prog_cnt|next_pc_out[0]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[1]                                        ; |prog_cnt|next_pc_out[1]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[2]                                        ; |prog_cnt|next_pc_out[2]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[3]                                        ; |prog_cnt|next_pc_out[3]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[4]                                        ; |prog_cnt|next_pc_out[4]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[5]                                        ; |prog_cnt|next_pc_out[5]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[6]                                        ; |prog_cnt|next_pc_out[6]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[7]                                        ; |prog_cnt|next_pc_out[7]                                        ; pin_out          ;
+; |prog_cnt|pc_out[0]                                             ; |prog_cnt|pc_out[0]                                             ; pin_out          ;
+; |prog_cnt|pc_out[1]                                             ; |prog_cnt|pc_out[1]                                             ; pin_out          ;
+; |prog_cnt|pc_out[2]                                             ; |prog_cnt|pc_out[2]                                             ; pin_out          ;
+; |prog_cnt|pc_out[3]                                             ; |prog_cnt|pc_out[3]                                             ; pin_out          ;
+; |prog_cnt|pc_out[4]                                             ; |prog_cnt|pc_out[4]                                             ; pin_out          ;
+; |prog_cnt|pc_out[5]                                             ; |prog_cnt|pc_out[5]                                             ; pin_out          ;
+; |prog_cnt|Add0~0                                                ; |prog_cnt|Add0~0                                                ; out0             ;
+; |prog_cnt|Add0~1                                                ; |prog_cnt|Add0~1                                                ; out0             ;
+; |prog_cnt|Add0~2                                                ; |prog_cnt|Add0~2                                                ; out0             ;
+; |prog_cnt|Add0~3                                                ; |prog_cnt|Add0~3                                                ; out0             ;
+; |prog_cnt|Add0~4                                                ; |prog_cnt|Add0~4                                                ; out0             ;
+; |prog_cnt|Add0~5                                                ; |prog_cnt|Add0~5                                                ; out0             ;
+; |prog_cnt|Add0~6                                                ; |prog_cnt|Add0~6                                                ; out0             ;
+; |prog_cnt|Add0~7                                                ; |prog_cnt|Add0~7                                                ; out0             ;
+; |prog_cnt|Add0~8                                                ; |prog_cnt|Add0~8                                                ; out0             ;
+; |prog_cnt|Add0~9                                                ; |prog_cnt|Add0~9                                                ; out0             ;
+; |prog_cnt|Add0~10                                               ; |prog_cnt|Add0~10                                               ; out0             ;
+; |prog_cnt|Add0~11                                               ; |prog_cnt|Add0~11                                               ; out0             ;
+; |prog_cnt|Add0~12                                               ; |prog_cnt|Add0~12                                               ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~17             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~17             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~1 ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~1 ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]   ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]   ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]    ; out0             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+------------------------------------------------------------------+
-; Missing 1-Value Coverage                                         ;
-+-----------------------+-----------------------+------------------+
-; Node Name             ; Output Port Name      ; Output Port Type ;
-+-----------------------+-----------------------+------------------+
-; |prog_cnt|cnt~0       ; |prog_cnt|cnt~0       ; out              ;
-; |prog_cnt|cnt~3       ; |prog_cnt|cnt~3       ; out              ;
-; |prog_cnt|cnt~5       ; |prog_cnt|cnt~5       ; out              ;
-; |prog_cnt|cnt[10]     ; |prog_cnt|cnt[10]     ; regout           ;
-; |prog_cnt|cnt[9]      ; |prog_cnt|cnt[9]      ; regout           ;
-; |prog_cnt|cnt[8]      ; |prog_cnt|cnt[8]      ; regout           ;
-; |prog_cnt|cnt[7]      ; |prog_cnt|cnt[7]      ; regout           ;
-; |prog_cnt|cnt[6]      ; |prog_cnt|cnt[6]      ; regout           ;
-; |prog_cnt|cnt[5]      ; |prog_cnt|cnt[5]      ; regout           ;
-; |prog_cnt|cnt[4]      ; |prog_cnt|cnt[4]      ; regout           ;
-; |prog_cnt|data_in[0]  ; |prog_cnt|data_in[0]  ; out              ;
-; |prog_cnt|data_in[1]  ; |prog_cnt|data_in[1]  ; out              ;
-; |prog_cnt|data_in[2]  ; |prog_cnt|data_in[2]  ; out              ;
-; |prog_cnt|data_in[3]  ; |prog_cnt|data_in[3]  ; out              ;
-; |prog_cnt|data_in[4]  ; |prog_cnt|data_in[4]  ; out              ;
-; |prog_cnt|data_in[5]  ; |prog_cnt|data_in[5]  ; out              ;
-; |prog_cnt|data_in[6]  ; |prog_cnt|data_in[6]  ; out              ;
-; |prog_cnt|data_in[7]  ; |prog_cnt|data_in[7]  ; out              ;
-; |prog_cnt|data_in[8]  ; |prog_cnt|data_in[8]  ; out              ;
-; |prog_cnt|data_in[9]  ; |prog_cnt|data_in[9]  ; out              ;
-; |prog_cnt|data_in[10] ; |prog_cnt|data_in[10] ; out              ;
-; |prog_cnt|q[4]        ; |prog_cnt|q[4]        ; pin_out          ;
-; |prog_cnt|q[5]        ; |prog_cnt|q[5]        ; pin_out          ;
-; |prog_cnt|q[6]        ; |prog_cnt|q[6]        ; pin_out          ;
-; |prog_cnt|q[7]        ; |prog_cnt|q[7]        ; pin_out          ;
-; |prog_cnt|q[8]        ; |prog_cnt|q[8]        ; pin_out          ;
-; |prog_cnt|q[9]        ; |prog_cnt|q[9]        ; pin_out          ;
-; |prog_cnt|q[10]       ; |prog_cnt|q[10]       ; pin_out          ;
-; |prog_cnt|Add0~7      ; |prog_cnt|Add0~7      ; out0             ;
-; |prog_cnt|Add0~8      ; |prog_cnt|Add0~8      ; out0             ;
-; |prog_cnt|Add0~9      ; |prog_cnt|Add0~9      ; out0             ;
-; |prog_cnt|Add0~10     ; |prog_cnt|Add0~10     ; out0             ;
-; |prog_cnt|Add0~11     ; |prog_cnt|Add0~11     ; out0             ;
-; |prog_cnt|Add0~12     ; |prog_cnt|Add0~12     ; out0             ;
-; |prog_cnt|Add0~13     ; |prog_cnt|Add0~13     ; out0             ;
-; |prog_cnt|Add0~14     ; |prog_cnt|Add0~14     ; out0             ;
-; |prog_cnt|Add0~15     ; |prog_cnt|Add0~15     ; out0             ;
-; |prog_cnt|Add0~16     ; |prog_cnt|Add0~16     ; out0             ;
-; |prog_cnt|Add0~17     ; |prog_cnt|Add0~17     ; out0             ;
-; |prog_cnt|Add0~18     ; |prog_cnt|Add0~18     ; out0             ;
-+-----------------------+-----------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; Node Name                                                       ; Output Port Name                                                ; Output Port Type ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; |prog_cnt|cnt[10]                                               ; |prog_cnt|cnt[10]                                               ; regout           ;
+; |prog_cnt|cnt[9]                                                ; |prog_cnt|cnt[9]                                                ; regout           ;
+; |prog_cnt|cnt[8]                                                ; |prog_cnt|cnt[8]                                                ; regout           ;
+; |prog_cnt|cnt[7]                                                ; |prog_cnt|cnt[7]                                                ; regout           ;
+; |prog_cnt|nrst                                                  ; |prog_cnt|nrst                                                  ; out              ;
+; |prog_cnt|new_pc_in[0]                                          ; |prog_cnt|new_pc_in[0]                                          ; out              ;
+; |prog_cnt|new_pc_in[1]                                          ; |prog_cnt|new_pc_in[1]                                          ; out              ;
+; |prog_cnt|new_pc_in[2]                                          ; |prog_cnt|new_pc_in[2]                                          ; out              ;
+; |prog_cnt|new_pc_in[3]                                          ; |prog_cnt|new_pc_in[3]                                          ; out              ;
+; |prog_cnt|new_pc_in[4]                                          ; |prog_cnt|new_pc_in[4]                                          ; out              ;
+; |prog_cnt|new_pc_in[5]                                          ; |prog_cnt|new_pc_in[5]                                          ; out              ;
+; |prog_cnt|new_pc_in[6]                                          ; |prog_cnt|new_pc_in[6]                                          ; out              ;
+; |prog_cnt|new_pc_in[7]                                          ; |prog_cnt|new_pc_in[7]                                          ; out              ;
+; |prog_cnt|new_pc_in[8]                                          ; |prog_cnt|new_pc_in[8]                                          ; out              ;
+; |prog_cnt|new_pc_in[9]                                          ; |prog_cnt|new_pc_in[9]                                          ; out              ;
+; |prog_cnt|new_pc_in[10]                                         ; |prog_cnt|new_pc_in[10]                                         ; out              ;
+; |prog_cnt|from_stack[0]                                         ; |prog_cnt|from_stack[0]                                         ; out              ;
+; |prog_cnt|from_stack[1]                                         ; |prog_cnt|from_stack[1]                                         ; out              ;
+; |prog_cnt|from_stack[2]                                         ; |prog_cnt|from_stack[2]                                         ; out              ;
+; |prog_cnt|from_stack[3]                                         ; |prog_cnt|from_stack[3]                                         ; out              ;
+; |prog_cnt|from_stack[4]                                         ; |prog_cnt|from_stack[4]                                         ; out              ;
+; |prog_cnt|from_stack[5]                                         ; |prog_cnt|from_stack[5]                                         ; out              ;
+; |prog_cnt|from_stack[6]                                         ; |prog_cnt|from_stack[6]                                         ; out              ;
+; |prog_cnt|from_stack[7]                                         ; |prog_cnt|from_stack[7]                                         ; out              ;
+; |prog_cnt|from_stack[8]                                         ; |prog_cnt|from_stack[8]                                         ; out              ;
+; |prog_cnt|from_stack[9]                                         ; |prog_cnt|from_stack[9]                                         ; out              ;
+; |prog_cnt|from_stack[10]                                        ; |prog_cnt|from_stack[10]                                        ; out              ;
+; |prog_cnt|pc_ctrl[0]                                            ; |prog_cnt|pc_ctrl[0]                                            ; out              ;
+; |prog_cnt|pc_ctrl[1]                                            ; |prog_cnt|pc_ctrl[1]                                            ; out              ;
+; |prog_cnt|next_pc_out[8]                                        ; |prog_cnt|next_pc_out[8]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[9]                                        ; |prog_cnt|next_pc_out[9]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[10]                                       ; |prog_cnt|next_pc_out[10]                                       ; pin_out          ;
+; |prog_cnt|pc_out[7]                                             ; |prog_cnt|pc_out[7]                                             ; pin_out          ;
+; |prog_cnt|pc_out[8]                                             ; |prog_cnt|pc_out[8]                                             ; pin_out          ;
+; |prog_cnt|pc_out[9]                                             ; |prog_cnt|pc_out[9]                                             ; pin_out          ;
+; |prog_cnt|pc_out[10]                                            ; |prog_cnt|pc_out[10]                                            ; pin_out          ;
+; |prog_cnt|Add0~13                                               ; |prog_cnt|Add0~13                                               ; out0             ;
+; |prog_cnt|Add0~14                                               ; |prog_cnt|Add0~14                                               ; out0             ;
+; |prog_cnt|Add0~15                                               ; |prog_cnt|Add0~15                                               ; out0             ;
+; |prog_cnt|Add0~16                                               ; |prog_cnt|Add0~16                                               ; out0             ;
+; |prog_cnt|Add0~17                                               ; |prog_cnt|Add0~17                                               ; out0             ;
+; |prog_cnt|Add0~18                                               ; |prog_cnt|Add0~18                                               ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~0              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~0              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~1              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~1              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~2              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~2              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~3              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~3              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~4              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~4              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~5              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~5              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~6              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~6              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~7              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~7              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~8              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~8              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~0 ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~0 ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~9              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~9              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~10             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~10             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~11             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~11             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~12             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~12             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~13             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~13             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~14             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~14             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~15             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~15             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~16             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~16             ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]    ; out0             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+------------------------------------------------------------------+
-; Missing 0-Value Coverage                                         ;
-+-----------------------+-----------------------+------------------+
-; Node Name             ; Output Port Name      ; Output Port Type ;
-+-----------------------+-----------------------+------------------+
-; |prog_cnt|cnt~0       ; |prog_cnt|cnt~0       ; out              ;
-; |prog_cnt|cnt~3       ; |prog_cnt|cnt~3       ; out              ;
-; |prog_cnt|cnt~5       ; |prog_cnt|cnt~5       ; out              ;
-; |prog_cnt|cnt[10]     ; |prog_cnt|cnt[10]     ; regout           ;
-; |prog_cnt|cnt[9]      ; |prog_cnt|cnt[9]      ; regout           ;
-; |prog_cnt|cnt[8]      ; |prog_cnt|cnt[8]      ; regout           ;
-; |prog_cnt|cnt[7]      ; |prog_cnt|cnt[7]      ; regout           ;
-; |prog_cnt|cnt[6]      ; |prog_cnt|cnt[6]      ; regout           ;
-; |prog_cnt|cnt[5]      ; |prog_cnt|cnt[5]      ; regout           ;
-; |prog_cnt|cnt[4]      ; |prog_cnt|cnt[4]      ; regout           ;
-; |prog_cnt|data_in[0]  ; |prog_cnt|data_in[0]  ; out              ;
-; |prog_cnt|data_in[1]  ; |prog_cnt|data_in[1]  ; out              ;
-; |prog_cnt|data_in[2]  ; |prog_cnt|data_in[2]  ; out              ;
-; |prog_cnt|data_in[3]  ; |prog_cnt|data_in[3]  ; out              ;
-; |prog_cnt|data_in[4]  ; |prog_cnt|data_in[4]  ; out              ;
-; |prog_cnt|data_in[5]  ; |prog_cnt|data_in[5]  ; out              ;
-; |prog_cnt|data_in[6]  ; |prog_cnt|data_in[6]  ; out              ;
-; |prog_cnt|data_in[7]  ; |prog_cnt|data_in[7]  ; out              ;
-; |prog_cnt|data_in[8]  ; |prog_cnt|data_in[8]  ; out              ;
-; |prog_cnt|data_in[9]  ; |prog_cnt|data_in[9]  ; out              ;
-; |prog_cnt|data_in[10] ; |prog_cnt|data_in[10] ; out              ;
-; |prog_cnt|q[4]        ; |prog_cnt|q[4]        ; pin_out          ;
-; |prog_cnt|q[5]        ; |prog_cnt|q[5]        ; pin_out          ;
-; |prog_cnt|q[6]        ; |prog_cnt|q[6]        ; pin_out          ;
-; |prog_cnt|q[7]        ; |prog_cnt|q[7]        ; pin_out          ;
-; |prog_cnt|q[8]        ; |prog_cnt|q[8]        ; pin_out          ;
-; |prog_cnt|q[9]        ; |prog_cnt|q[9]        ; pin_out          ;
-; |prog_cnt|q[10]       ; |prog_cnt|q[10]       ; pin_out          ;
-; |prog_cnt|Add0~7      ; |prog_cnt|Add0~7      ; out0             ;
-; |prog_cnt|Add0~8      ; |prog_cnt|Add0~8      ; out0             ;
-; |prog_cnt|Add0~9      ; |prog_cnt|Add0~9      ; out0             ;
-; |prog_cnt|Add0~10     ; |prog_cnt|Add0~10     ; out0             ;
-; |prog_cnt|Add0~11     ; |prog_cnt|Add0~11     ; out0             ;
-; |prog_cnt|Add0~12     ; |prog_cnt|Add0~12     ; out0             ;
-; |prog_cnt|Add0~13     ; |prog_cnt|Add0~13     ; out0             ;
-; |prog_cnt|Add0~14     ; |prog_cnt|Add0~14     ; out0             ;
-; |prog_cnt|Add0~15     ; |prog_cnt|Add0~15     ; out0             ;
-; |prog_cnt|Add0~16     ; |prog_cnt|Add0~16     ; out0             ;
-; |prog_cnt|Add0~17     ; |prog_cnt|Add0~17     ; out0             ;
-; |prog_cnt|Add0~18     ; |prog_cnt|Add0~18     ; out0             ;
-+-----------------------+-----------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; Node Name                                                       ; Output Port Name                                                ; Output Port Type ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
+; |prog_cnt|cnt[10]                                               ; |prog_cnt|cnt[10]                                               ; regout           ;
+; |prog_cnt|cnt[9]                                                ; |prog_cnt|cnt[9]                                                ; regout           ;
+; |prog_cnt|cnt[8]                                                ; |prog_cnt|cnt[8]                                                ; regout           ;
+; |prog_cnt|cnt[7]                                                ; |prog_cnt|cnt[7]                                                ; regout           ;
+; |prog_cnt|cnt[6]                                                ; |prog_cnt|cnt[6]                                                ; regout           ;
+; |prog_cnt|nrst                                                  ; |prog_cnt|nrst                                                  ; out              ;
+; |prog_cnt|new_pc_in[0]                                          ; |prog_cnt|new_pc_in[0]                                          ; out              ;
+; |prog_cnt|new_pc_in[1]                                          ; |prog_cnt|new_pc_in[1]                                          ; out              ;
+; |prog_cnt|new_pc_in[2]                                          ; |prog_cnt|new_pc_in[2]                                          ; out              ;
+; |prog_cnt|new_pc_in[3]                                          ; |prog_cnt|new_pc_in[3]                                          ; out              ;
+; |prog_cnt|new_pc_in[4]                                          ; |prog_cnt|new_pc_in[4]                                          ; out              ;
+; |prog_cnt|new_pc_in[5]                                          ; |prog_cnt|new_pc_in[5]                                          ; out              ;
+; |prog_cnt|new_pc_in[6]                                          ; |prog_cnt|new_pc_in[6]                                          ; out              ;
+; |prog_cnt|new_pc_in[7]                                          ; |prog_cnt|new_pc_in[7]                                          ; out              ;
+; |prog_cnt|new_pc_in[8]                                          ; |prog_cnt|new_pc_in[8]                                          ; out              ;
+; |prog_cnt|new_pc_in[9]                                          ; |prog_cnt|new_pc_in[9]                                          ; out              ;
+; |prog_cnt|new_pc_in[10]                                         ; |prog_cnt|new_pc_in[10]                                         ; out              ;
+; |prog_cnt|from_stack[0]                                         ; |prog_cnt|from_stack[0]                                         ; out              ;
+; |prog_cnt|from_stack[1]                                         ; |prog_cnt|from_stack[1]                                         ; out              ;
+; |prog_cnt|from_stack[2]                                         ; |prog_cnt|from_stack[2]                                         ; out              ;
+; |prog_cnt|from_stack[3]                                         ; |prog_cnt|from_stack[3]                                         ; out              ;
+; |prog_cnt|from_stack[4]                                         ; |prog_cnt|from_stack[4]                                         ; out              ;
+; |prog_cnt|from_stack[5]                                         ; |prog_cnt|from_stack[5]                                         ; out              ;
+; |prog_cnt|from_stack[6]                                         ; |prog_cnt|from_stack[6]                                         ; out              ;
+; |prog_cnt|from_stack[7]                                         ; |prog_cnt|from_stack[7]                                         ; out              ;
+; |prog_cnt|from_stack[8]                                         ; |prog_cnt|from_stack[8]                                         ; out              ;
+; |prog_cnt|from_stack[9]                                         ; |prog_cnt|from_stack[9]                                         ; out              ;
+; |prog_cnt|from_stack[10]                                        ; |prog_cnt|from_stack[10]                                        ; out              ;
+; |prog_cnt|pc_ctrl[0]                                            ; |prog_cnt|pc_ctrl[0]                                            ; out              ;
+; |prog_cnt|pc_ctrl[1]                                            ; |prog_cnt|pc_ctrl[1]                                            ; out              ;
+; |prog_cnt|next_pc_out[8]                                        ; |prog_cnt|next_pc_out[8]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[9]                                        ; |prog_cnt|next_pc_out[9]                                        ; pin_out          ;
+; |prog_cnt|next_pc_out[10]                                       ; |prog_cnt|next_pc_out[10]                                       ; pin_out          ;
+; |prog_cnt|pc_out[6]                                             ; |prog_cnt|pc_out[6]                                             ; pin_out          ;
+; |prog_cnt|pc_out[7]                                             ; |prog_cnt|pc_out[7]                                             ; pin_out          ;
+; |prog_cnt|pc_out[8]                                             ; |prog_cnt|pc_out[8]                                             ; pin_out          ;
+; |prog_cnt|pc_out[9]                                             ; |prog_cnt|pc_out[9]                                             ; pin_out          ;
+; |prog_cnt|pc_out[10]                                            ; |prog_cnt|pc_out[10]                                            ; pin_out          ;
+; |prog_cnt|Add0~13                                               ; |prog_cnt|Add0~13                                               ; out0             ;
+; |prog_cnt|Add0~14                                               ; |prog_cnt|Add0~14                                               ; out0             ;
+; |prog_cnt|Add0~15                                               ; |prog_cnt|Add0~15                                               ; out0             ;
+; |prog_cnt|Add0~16                                               ; |prog_cnt|Add0~16                                               ; out0             ;
+; |prog_cnt|Add0~17                                               ; |prog_cnt|Add0~17                                               ; out0             ;
+; |prog_cnt|Add0~18                                               ; |prog_cnt|Add0~18                                               ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~0              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~0              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~1              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~1              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~2              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~2              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~3              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~3              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~4              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~4              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~5              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~5              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~6              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~6              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~7              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~7              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~8              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~8              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~0 ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|result_node[0]~0 ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~9              ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~9              ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~10             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~10             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~11             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~11             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~12             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~12             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~13             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~13             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~14             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~14             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~15             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~15             ; out0             ;
+; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~16             ; |prog_cnt|lpm_mux:Mux10|mux_umc:auto_generated|_~16             ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux9|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux8|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux7|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux6|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux5|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux4|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux3|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux2|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux1|mux_umc:auto_generated|result_node[0]    ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~0               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~0               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~1               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~1               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~2               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~2               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~3               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~3               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~4               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~4               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~5               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~5               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~6               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~6               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~7               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~7               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~8               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~8               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~0  ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~0  ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~9               ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~9               ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~10              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~10              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~11              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~11              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~12              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~12              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~13              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~13              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~14              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~14              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~15              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~15              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~16              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~16              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~17              ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|_~17              ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~1  ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]~1  ; out0             ;
+; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]    ; |prog_cnt|lpm_mux:Mux0|mux_umc:auto_generated|result_node[0]    ; out0             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------+------------------+
 
 
 +---------------------+
@@ -249,29 +701,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 22:38:31 2024
+    Info: Processing started: Thu May 09 21:18:10 2024
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off prog_cnt -c prog_cnt
-Info: Using vector source file "D:/git/VHDL_TP2/prog_cnt/prog_cnt.vwf"
-Info: Overwriting simulation input file with simulation results
-    Info: A backup of prog_cnt.vwf called prog_cnt.sim_ori.vwf has been created in the db folder
+Info: Using vector source file "C:/Users/User/Downloads/VHDL_TP2-main/prog_cnt/prog_cnt.vwf"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
-Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[9]"
-Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[8]"
-Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[6]"
-Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[4]"
-Warning: Found clock-sensitive change during active clock edge at time 5.0 ns on register "|prog_cnt|cnt[1]"
-Warning: Found clock-sensitive change during active clock edge at time 115.0 ns on register "|prog_cnt|cnt[0]"
-Warning: Found clock-sensitive change during active clock edge at time 135.0 ns on register "|prog_cnt|cnt[2]"
-Warning: Found clock-sensitive change during active clock edge at time 175.0 ns on register "|prog_cnt|cnt[3]"
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      39.39 %
-Info: Number of transitions in simulation is 3314
-Info: Vector file prog_cnt.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II Simulator was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 145 megabytes
-    Info: Processing ended: Wed May 08 22:38:31 2024
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+Info: Simulation coverage is      18.77 %
+Info: Number of transitions in simulation is 2684
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 142 megabytes
+    Info: Processing ended: Thu May 09 21:18:13 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:05
 
 

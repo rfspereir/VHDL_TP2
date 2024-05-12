@@ -31,7 +31,7 @@ ON
 # case_insensitive
 # source_file
 prog_cnt.vhd
-ab122724c6735171dd23a5de77bd63
+bd25517ea67eb3cf538e607bf836baa9
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -47,7 +47,7 @@ ON
 |
 }
 # lmf
-c:|portable|altera|91sp2|quartus|lmf|maxplus2.lmf
+|users|user|desktop|altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
